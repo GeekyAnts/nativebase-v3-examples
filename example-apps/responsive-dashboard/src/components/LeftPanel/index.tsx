@@ -40,20 +40,14 @@ export function LeftPanel({
   const { isOpen, onOpen, onClose } = useDisclose();
 
   return isWeb ? (
-    <Box w={64} nativeID="1234" h="100%" bg="slateGray.600" overflow="hidden">
-      <HStack alignItems="center" space="xs" ml={7} my={3}>
-        <Logo size="lg" />
-        <Heading fontSize="lg" color="white">
+    <Box w={80} nativeID="1234" h="100%" bg="slateGray.600" overflow="hidden">
+      <HStack alignItems="center" space="md" ml={6} my={6}>
+        <Logo size="2xl" />
+        <Heading fontSize="2xl" color="white">
           NativeBase
         </Heading>
       </HStack>
-      {/* <VStack px={8} space="xs" my={3}>
-        <Logo size="xl" />
-        <Heading fontSize="xl" color="white">
-          NativeBase
-        </Heading>
-      </VStack> */}
-      <VStack px={8} py={4} bg="slateGray.700" space={2}>
+      <VStack px={8} py={8} bg="slateGray.700" space={2}>
         <Text color="coolGray.400" fontWeight={500}>
           Your Balance
         </Text>
@@ -80,10 +74,10 @@ export function LeftPanel({
           View summary
         </Button>
       </VStack>
-      <Button.Group direction="column" variant="unstyled" p={4}>
+      <Button.Group direction="column" variant="unstyled" p={6}>
         <Button
           _hover={{ bg: "slateGray.700" }}
-          _text={{ color: "coolGray.200", fontSize: "sm" }}
+          _text={{ color: "coolGray.200" }}
           startIcon={
             <Icon
               as={<VectorIcons.AntDesign name="home" />}
@@ -91,7 +85,6 @@ export function LeftPanel({
               color={
                 route.name === "dashboard" ? "coolGray.200" : "coolGray.400"
               }
-              size="xs"
             />
           }
           justifyContent="flex-start"
@@ -103,7 +96,7 @@ export function LeftPanel({
         </Button>
         <Button
           _hover={{ bg: "slateGray.700" }}
-          _text={{ color: "coolGray.200", fontSize: "sm" }}
+          _text={{ color: "coolGray.200" }}
           startIcon={
             <Icon
               as={<VectorIcons.Entypo name="text-document" />}
@@ -111,7 +104,6 @@ export function LeftPanel({
               color={
                 route.name === "invoices" ? "coolGray.200" : "coolGray.400"
               }
-              size="xs"
             />
           }
           justifyContent="flex-start"
@@ -122,19 +114,18 @@ export function LeftPanel({
         </Button>
         <Button
           _hover={{ bg: "slateGray.700" }}
-          _text={{ color: "coolGray.200", fontSize: "sm" }}
+          _text={{ color: "coolGray.200" }}
           startIcon={
             <Icon
               as={<VectorIcons.FontAwesome name="balance-scale" />}
-              size="xs"
+              size="sm"
               mr={4}
               color={
                 route.name === "balances" ? "coolGray.200" : "coolGray.400"
               }
-              size="xs"
             />
           }
-          // py="18px"
+          py="18px"
           justifyContent="flex-start"
           _pressed={{ bg: "coolGray.800" }}
           {...(route.name === "balances" && activeRouteProps)}
@@ -143,7 +134,7 @@ export function LeftPanel({
         </Button>
         <Button
           _hover={{ bg: "slateGray.700" }}
-          _text={{ color: "coolGray.200", fontSize: "sm" }}
+          _text={{ color: "coolGray.200" }}
           startIcon={
             <Icon
               as={<VectorIcons.Ionicons name="person-circle-outline" />}
@@ -151,7 +142,6 @@ export function LeftPanel({
               color={
                 route.name === "recipients" ? "coolGray.200" : "coolGray.400"
               }
-              size="xs"
             />
           }
           justifyContent="flex-start"
@@ -162,7 +152,7 @@ export function LeftPanel({
         </Button>
         <Button
           _hover={{ bg: "slateGray.700" }}
-          _text={{ color: "coolGray.200", fontSize: "sm" }}
+          _text={{ color: "coolGray.200" }}
           startIcon={
             <Icon
               as={
@@ -170,7 +160,6 @@ export function LeftPanel({
               }
               mr={4}
               color={route.name === "reports" ? "coolGray.200" : "coolGray.400"}
-              size="xs"
             />
           }
           justifyContent="flex-start"
@@ -181,16 +170,15 @@ export function LeftPanel({
         </Button>
       </Button.Group>
       <Divider bg="slateGray.700" size={3} />
-      <Button.Group direction="column" variant="unstyled" p={4}>
+      <Button.Group direction="column" variant="unstyled" p={6}>
         <Button
           _hover={{ bg: "slateGray.700" }}
-          _text={{ color: "coolGray.200", fontSize: "sm" }}
+          _text={{ color: "coolGray.200" }}
           startIcon={
             <Icon
               as={<VectorIcons.Ionicons name="settings-outline" />}
               mr={4}
               color={route.name === "setting" ? "coolGray.200" : "coolGray.400"}
-              size="xs"
             />
           }
           justifyContent="flex-start"
@@ -202,13 +190,12 @@ export function LeftPanel({
         </Button>
         <Button
           _hover={{ bg: "slateGray.700" }}
-          _text={{ color: "coolGray.200", fontSize: "sm" }}
+          _text={{ color: "coolGray.200" }}
           startIcon={
             <Icon
               as={<VectorIcons.Feather name="help-circle" />}
               mr={4}
               color={route.name === "help" ? "coolGray.200" : "coolGray.400"}
-              size="xs"
             />
           }
           justifyContent="flex-start"

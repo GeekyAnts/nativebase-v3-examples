@@ -143,7 +143,6 @@ export function Setting({
                           //@ts-ignore
                           variant="subtle"
                           size={isLargeScreen ? "sm" : "xs"}
-                          // _focus={{ shadowOutline: "blueGray" }}
                         >
                           Change Photo
                         </Button>
@@ -320,14 +319,14 @@ export function Setting({
                 </Stack>
                 <HStack space={3} alignItems="flex-end" ml="auto" mb={12}>
                   <Button
-                    size={isLargeScreen ? "sm" : "sm"}
+                    size={isLargeScreen ? "md" : "sm"}
                     variant="solid"
                     colorScheme="blue"
                   >
                     Save Changes
                   </Button>
                   <Button
-                    size={isLargeScreen ? "sm" : "sm"}
+                    size={isLargeScreen ? "md" : "sm"}
                     variant="outline"
                     colorScheme="blueGray"
                     _pressed={{ bg: "blueGray.100" }}

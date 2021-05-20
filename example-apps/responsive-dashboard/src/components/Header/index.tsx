@@ -15,7 +15,6 @@ import {
   Alert,
   useDisclose,
   useBreakpointValue,
-  Box,
 } from "nb-beavr";
 import { ScrollView } from "react-native";
 import { Feather } from "@expo/vector-icons";
@@ -35,77 +34,60 @@ export function Header(props: Proptype) {
   const initialRef = React.useRef(null);
   return (
     <>
-      <HStack
-        alignItems="center"
-        space={4}
-        mt={2}
-        mb={{ base: 4, lg: 2 }}
-        py={2}
-      >
-        <Heading fontSize="xl" flex={1}>
+      <HStack alignItems="center" space={4} mt={7} mb={{ base: 4, lg: 7 }}>
+        <Heading flex={1} size={!isLargeScreen ? "sm" : "md"}>
           {props.title}
         </Heading>
+
         {isLargeScreen ? (
-          <HStack space={6}>
-            <Box alignSelf="center">
-              <IconButton
-                // mx={2}
-                icon={<SearchIcon size={5} color="blueGray.500" />}
-                colorScheme="coolGray"
-                _hover={{ bg: "transparent" }}
-                _pressed={{ bg: "transparent" }}
-                // border={0}
-                onPress={onOpen}
-                size={4}
-              />
-            </Box>
-            <Box alignSelf="center">
-              <Menu
-                mr={6}
-                // should updated in next version
-                shouldOverlapWithTrigger={false}
-                placement="bottom right"
-                trigger={(triggerProps: any) => {
-                  return (
-                    <IconButton
-                      icon={
-                        <Icon
-                          as={<Feather name="bell" />}
-                          color="blueGray.500"
-                          size={6}
-                        />
-                      }
-                      {...triggerProps}
-                      colorScheme="coolGray"
-                      _pressed={{ bg: "transparent", borderColor: "white" }}
-                      _hover={{ bg: "transparent" }}
-                      // mx={2}
-                      size={6}
-                    />
-                  );
-                }}
-              >
-                <Menu.Item>Menu item 1</Menu.Item>
-                <Menu.Item>Menu item 2</Menu.Item>
-                <Menu.Item isDisabled>Menu item 3</Menu.Item>
-                <Divider />
-                <Menu.Item>Menu item 4</Menu.Item>
-              </Menu>
-            </Box>
-            <Box alignSelf="center">
-              <Button
-                colorScheme="blueGray"
-                bg="blueGray.200"
-                _pressed={{ bg: "blueGray.300" }}
-                //   Todo: Add user defined variants to typings as well.
-                // @ts-ignore
-                variant="subtle"
-                size="sm"
-                style={{ shadowColor: "red" }}
-              >
-                Log out
-              </Button>
-            </Box>
+          <HStack space={3}>
+            <IconButton
+              icon={<SearchIcon size={6} color="blueGray.500" />}
+              colorScheme="coolGray"
+              _hover={{ bg: "transparent" }}
+              _pressed={{ bg: "transparent" }}
+              onPress={onOpen}
+            />
+
+            <Menu
+              mr={6}
+              // should updated in next version
+              shouldOverlapWithTrigger={false}
+              placement="bottom right"
+              trigger={(triggerProps: any) => {
+                return (
+                  <IconButton
+                    icon={
+                      <Icon
+                        as={<Feather name="bell" size={18} />}
+                        color="blueGray.500"
+                        size="sm"
+                      />
+                    }
+                    {...triggerProps}
+                    colorScheme="coolGray"
+                    _pressed={{ bg: "transparent" }}
+                    _hover={{ bg: "transparent" }}
+                  />
+                );
+              }}
+            >
+              <Menu.Item>Menu item 1</Menu.Item>
+              <Menu.Item>Menu item 2</Menu.Item>
+              <Menu.Item isDisabled>Menu item 3</Menu.Item>
+              <Divider />
+              <Menu.Item>Menu item 4</Menu.Item>
+            </Menu>
+            <Button
+              colorScheme="blueGray"
+              bg="blueGray.200"
+              _pressed={{ bg: "blueGray.300" }}
+              //   Todo: Add user defined variants to typings as well.
+              // @ts-ignore
+              variant="subtle"
+            >
+              Log out
+            </Button>
           </HStack>
         ) : (
           <></>

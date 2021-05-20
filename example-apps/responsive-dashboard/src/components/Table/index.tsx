@@ -11,8 +11,8 @@ import {
   useBreakpointValue,
   Badge,
   Stack,
+  SimpleGrid,
   Divider,
-  IconButton,
 } from "nb-beavr";
 import { Logo } from "../../Icons/Logo";
 import * as VectorIcons from "@expo/vector-icons";
@@ -36,11 +36,11 @@ export const Table = () => {
             justifyContent={{ base: "flex-start", lg: "space-between" }}
             alignItems={{ base: "flex-start", lg: "flex-end" }}
           >
-            <Heading size="xs">Recent Activity</Heading>
+            <Heading size="sm">Recent Activity</Heading>
             <Link
               _text={{
                 // @ts-ignore
-                fontSize: "sm",
+                fontSize: `${isWeb ? "20px" : "15px"}`,
                 fontWeight: 500,
               }}
             >
@@ -50,13 +50,13 @@ export const Table = () => {
           <Box overflow="visible" bg="transparent">
             <VStack
               divider={<Divider />}
-              mt={6}
+              mt={10}
               rounded={12}
               bg="white"
               shadow={4}
               overflow="hidden"
             >
-              <HStack bg="coolGray.100" alignItems="center">
+              <HStack justifyItems="center">
                 <Text bold bg="coolGray.100" p={4} w="20%">
                   CLIENT / INVOICE
                 </Text>
@@ -71,7 +71,7 @@ export const Table = () => {
                 </Text>
                 <Text bold bg="coolGray.100" p={4} w="5%"></Text>
               </HStack>
-              <HStack alignItems="center">
+              <HStack justifyItems="center">
                 <Text bg="white" p={4} w="20%">
                   Sept 28, 2019
                 </Text>
@@ -87,11 +87,15 @@ export const Table = () => {
                   flexDirection="row"
                 >
                   <Badge
+                    // alignSelf="flex-start"
+
+                    // w="15%"
                     colorScheme="success"
                     bg="green.100"
                     borderRadius="pill"
-                    px={2}
-                    py={1}
+                    // m={4}
+                    px={4}
+                    py={2}
                     _text={{
                       fontWeight: 500,
                       lineHeight: "md",
@@ -117,23 +121,16 @@ export const Table = () => {
                   flexDirection="row"
                 >
                   <Box mr={4}>
-                    <IconButton
-                      colorScheme="coolGray"
-                      icon={
-                        <Icon
-                          as={<VectorIcons.Entypo name="dots-three-vertical" />}
-                          size="xs"
-                          color="coolGray.400"
-                        />
-                      }
-                      size={2}
-                      _hover={{ bg: "transparent" }}
-                      _pressed={{ bg: "transparent", color: "transparent" }}
+                    <Icon
+                      size="sm"
+                      color="coolGray.400"
+                      bg="white"
+                      as={<VectorIcons.Entypo name="dots-three-vertical" />}
                     />
                   </Box>
                 </Box>
               </HStack>
-              <HStack bg="coolGray.100" alignItems="center">
+              <HStack justifyItems="center">
                 <Text bg="coolGray.100" p={4} w="20%">
                   Sept 28, 2019
                 </Text>
@@ -149,11 +146,10 @@ export const Table = () => {
                   flexDirection="row"
                 >
                   <Badge
-                    // colorScheme="primary"
-                    bg="blue.100"
+                    colorScheme="primary"
                     borderRadius="pill"
-                    px={2}
-                    py={1}
+                    px={4}
+                    py={2}
                     _text={{
                       fontWeight: 500,
                       lineHeight: "md",
@@ -175,23 +171,16 @@ export const Table = () => {
                   flexDirection="row"
                 >
                   <Box mr={4}>
-                    <IconButton
-                      colorScheme="coolGray"
-                      icon={
-                        <Icon
-                          as={<VectorIcons.Entypo name="dots-three-vertical" />}
-                          size="xs"
-                          color="coolGray.400"
-                        />
-                      }
-                      size={2}
-                      _hover={{ bg: "transparent" }}
-                      _pressed={{ bg: "transparent", color: "transparent" }}
+                    <Icon
+                      size="sm"
+                      color="coolGray.400"
+                      bg="white"
+                      as={<VectorIcons.Entypo name="dots-three-vertical" />}
                     />
                   </Box>
                 </Box>
               </HStack>
-              <HStack alignItems="center">
+              <HStack justifyItems="center">
                 <Text bg="white" p={4} w="20%">
                   Sept 28, 2019
                 </Text>
@@ -209,8 +198,8 @@ export const Table = () => {
                   <Badge
                     colorScheme="danger"
                     borderRadius="pill"
-                    px={2}
-                    py={1}
+                    px={4}
+                    py={2}
                     _text={{
                       fontWeight: 500,
                       lineHeight: "md",
@@ -232,23 +221,11 @@ export const Table = () => {
                   flexDirection="row"
                 >
                   <Box mr={4}>
-                    <IconButton
-                      // bg="white"
-                      colorScheme="coolGray"
-                      icon={
-                        <Icon
-                          as={<VectorIcons.Entypo name="dots-three-vertical" />}
-                          size="xs"
-                          color="coolGray.400"
-                        />
-                      }
-                      size={2}
-                      _hover={{ bg: "transparent" }}
-                      _pressed={{
-                        bg: "transparent",
-                        color: "transparent",
-                        shadow: "",
-                      }}
+                    <Icon
+                      size="sm"
+                      color="coolGray.400"
+                      bg="white"
+                      as={<VectorIcons.Entypo name="dots-three-vertical" />}
                     />
                   </Box>
                 </Box>
@@ -258,7 +235,7 @@ export const Table = () => {
         </>
       ) : (
         <>
-          <Heading size="xs" mb={6}>
+          <Heading size="sm" mb={6}>
             Recent Activity
           </Heading>
           <VStack space={6}>
@@ -271,29 +248,29 @@ export const Table = () => {
               rounded={12}
               bg="white"
             >
-              <Text bold fontSize="md">
+              <Text bold fontSize="lg">
                 Payment to Molly Sanders
               </Text>
               <Text fontSize="sm" color="coolGray.500" mt={-2}>
                 Sept 28, 2019
               </Text>
               <HStack>
-                <Text bold fontSize="lg" mr={1}>
+                <Text bold fontSize="xl" mr={1}>
                   $20,000
                 </Text>
-                <Text bold fontSize="lg" color="coolGray.400">
+                <Text bold fontSize="xl" color="coolGray.400">
                   USD
                 </Text>
               </HStack>
 
               <Box alignItems="center" flexWrap="wrap" flexDirection="row">
                 <Badge
-                  px={2}
-                  py={1}
+                  py={2}
+                  px={4}
                   colorScheme="success"
                   bg="green.100"
                   borderRadius="pill"
-                  _text={{ fontWeight: 500 }}
+                  _text={{ fontSize: "md", fontWeight: 500 }}
                 >
                   Success
                 </Badge>
@@ -308,28 +285,28 @@ export const Table = () => {
               rounded={12}
               bg="white"
             >
-              <Text bold fontSize="md">
+              <Text bold fontSize="lg">
                 Payment to John Doe
               </Text>
               <Text fontSize="sm" color="coolGray.500" mt={-2}>
                 Sept 28, 2019
               </Text>
               <HStack>
-                <Text bold fontSize="lg" mr={1}>
+                <Text bold fontSize="xl" mr={1}>
                   $15,000
                 </Text>
-                <Text bold fontSize="lg" color="coolGray.400">
+                <Text bold fontSize="xl" color="coolGray.400">
                   USD
                 </Text>
               </HStack>
 
               <Box alignItems="center" flexWrap="wrap" flexDirection="row">
                 <Badge
-                  px={2}
-                  py={1}
-                  bg="blue.100"
+                  py={2}
+                  px={4}
+                  colorScheme="primary"
                   borderRadius="pill"
-                  _text={{ fontWeight: 500 }}
+                  _text={{ fontSize: "md", fontWeight: 500 }}
                 >
                   Processing
                 </Badge>
@@ -345,28 +322,28 @@ export const Table = () => {
               rounded={12}
               bg="white"
             >
-              <Text bold fontSize="md">
+              <Text bold fontSize="lg">
                 Payment to MacGillan Mcinsky
               </Text>
               <Text fontSize="sm" color="coolGray.500" mt={-2}>
                 Sept 28, 2019
               </Text>
               <HStack>
-                <Text bold fontSize="lg" mr={1}>
+                <Text bold fontSize="xl" mr={1}>
                   $30,000
                 </Text>
-                <Text bold fontSize="lg" color="coolGray.400">
+                <Text bold fontSize="xl" color="coolGray.400">
                   USD
                 </Text>
               </HStack>
 
               <Box alignItems="center" flexWrap="wrap" flexDirection="row">
                 <Badge
-                  px={2}
-                  py={1}
+                  py={2}
+                  px={4}
                   colorScheme="danger"
                   borderRadius="pill"
-                  _text={{ fontWeight: 500 }}
+                  _text={{ fontSize: "md", fontWeight: 500 }}
                 >
                   Failed
                 </Badge>
