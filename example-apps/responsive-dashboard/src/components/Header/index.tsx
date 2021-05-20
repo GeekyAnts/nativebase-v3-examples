@@ -42,7 +42,7 @@ export function Header(props: Proptype) {
         {isLargeScreen ? (
           <HStack space={3}>
             <IconButton
-              icon={<SearchIcon size={6} color="blueGray.500" />}
+              icon={<SearchIcon size="sm" color="blueGray.500" />}
               colorScheme="coolGray"
               _hover={{ bg: "transparent" }}
               _pressed={{ bg: "transparent" }}
@@ -59,7 +59,7 @@ export function Header(props: Proptype) {
                   <IconButton
                     icon={
                       <Icon
-                        as={<Feather name="bell" size={18} />}
+                        as={<Feather name="bell" />}
                         color="blueGray.500"
                         size="sm"
                       />

@@ -59,105 +59,83 @@ export function Dashboard({
             <Divider bg="gray.100" size={2.5} rounded={5} />
             <Stack
               // @ts-ignore
-              // direction={isLargeScreen ? "row" : "column"}
-              direction={{ base: "column", xl: "row" }}
+              direction={isLargeScreen ? "row" : "column"}
               my={6}
-              // alignItems={{ base: "flex-start", lg: "center" }}
-              alignItems={{ base: "flex-start", xl: "center" }}
+              alignItems={{ base: "flex-start", lg: "center" }}
               space={6}
               mt={8}
               w="100%"
               px={0}
             >
-              <Stack
-                direction={{ base: "column", md: "row" }}
-                space={6}
-                w={{ base: "100%", lg: "auto" }}
-                // alignSelf="flex-start"
+              <Avatar
+                alignSelf="center"
+                // Todo: fix size typing in Avatar
+                // @ts-ignore
+                size={{ base: 24, lg: 20 }}
+                source={{
+                  uri:
+                    "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80",
+                }}
               >
-                <Avatar
-                  // alignSelf="center"
-                  alignSelf={{ base: "center", lg: "flex-start", xl: "center" }}
-                  // Todo: fix size typing in Avatar
-                  // @ts-ignore
-                  size={{ base: 24, lg: 20 }}
-                  source={{
-                    uri: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80",
-                  }}
-                >
-                  JD
-                </Avatar>
-                <VStack
+                JD
+              </Avatar>
+              <VStack space={3} _web={{ flex: { base: "none", lg: 1 } }} px={0}>
+                <Text fontSize={{ base: "lg", md: "2xl" }}>
+                  Good morning, Jessica Willis
+                </Text>
+                <Stack
+                  direction={isLargeScreen ? "row" : "column"}
+                  alignItems={{ base: "flex-start", lg: "center" }}
                   space={3}
-                  _web={{ flex: { base: "none", lg: 1 } }}
-                  px={0}
                 >
-                  <Text fontSize={{ base: "lg", md: "xl" }}>
-                    Good morning, Jessica Willis
-                  </Text>
-                  <Stack
-                    // direction={isLargeScreen ? "row" : "column"}
-                    direction={{ base: "column", lg: "row" }}
-                    alignItems={{ base: "flex-start", lg: "center" }}
-                    space={3}
-                  >
-                    <HStack alignItems="center" space={1}>
-                      <Icon
-                        as={
-                          <VectorIcons.MaterialCommunityIcons name="office-building" />
-                        }
-                        color="slateGray.400"
-                        size="sm"
-                      />
-                      <Text
-                        color="slateGray.400"
-                        fontWeight={600}
-                        // fontSize={{ base: "sm", md: "md" }}
-                      >
-                        Fairfax, Cleaveland, Ohio
-                      </Text>
-                    </HStack>
-                    <HStack alignItems="center" space={2} ml={1}>
-                      <Icon
-                        as={<VectorIcons.AntDesign name="checkcircle" />}
-                        color="emerald.300"
-                        size="xs"
-                      />
-                      <Text
-                        color="slateGray.400"
-                        fontWeight={600}
-                        // fontSize={{ base: "sm", md: "md" }}
-                      >
-                        Verified Account
-                      </Text>
-                    </HStack>
-                  </Stack>
-                </VStack>
-              </Stack>
+                  <HStack alignItems="center" space={1}>
+                    <Icon
+                      as={
+                        <VectorIcons.MaterialCommunityIcons name="office-building" />
+                      }
+                      color="slateGray.400"
+                      size="sm"
+                    />
+                    <Text
+                      color="slateGray.400"
+                      fontWeight={600}
+                      fontSize={{ base: "sm", md: "md" }}
+                    >
+                      Fairfax, Cleaveland, Ohio
+                    </Text>
+                  </HStack>
+                  <HStack alignItems="center" space={2} ml={1}>
+                    <Icon
+                      as={<VectorIcons.AntDesign name="checkcircle" />}
+                      color="emerald.300"
+                      size="xs"
+                    />
+                    <Text
+                      color="slateGray.400"
+                      fontWeight={600}
+                      fontSize={{ base: "sm", md: "md" }}
+                    >
+                      Verified Account
+                    </Text>
+                  </HStack>
+                </Stack>
+              </VStack>
+
               <HStack
                 space={isLargeScreen ? 6 : 10}
-                // mt={isLargeScreen ? 0 : 3}
-                mt={{ base: 3, xl: 0 }}
+                mt={isLargeScreen ? 0 : 3}
                 mb={6}
-                ml={{ base: "0", xl: "auto" }}
-                alignSelf={{ base: "center", xl: "flex-end" }}
-                // alignSelf={{ base: "center", lg: "flex-end", xl: "center" }}
+                alignSelf="center"
               >
-                <Tooltip
-                  label="Send or Request money from a friend"
-                  openDelay={500}
-                >
+                <Tooltip label="Hey, I'm here!" openDelay={500}>
                   <VStack
                     alignItems="center"
                     space={3}
-                    // flex={{ base: 1, lg: "none" }}
-                    textAlign="center"
-                    flex={1}
+                    flex={{ base: 1, lg: "none" }}
                   >
                     <Circle
                       // @ts-ignore
                       size={{ base: 12, lg: 16 }}
-                      // size={12}
                       borderWidth={3}
                       borderColor="blueGray.200"
                     >
@@ -165,7 +143,6 @@ export function Dashboard({
                         as={<VectorIcons.AntDesign name="camerao" />}
                         // @ts-ignore
                         size={{ base: 6, lg: 8 }}
-                        // size={6}
                         color="blueGray.500"
                       />
                     </Circle>
@@ -173,8 +150,7 @@ export function Dashboard({
                     <Text
                       color="coolGray.500"
                       fontWeight={600}
-                      // fontSize={{ base: "sm", lg: "md" }}
-                      fontSize="sm"
+                      fontSize={{ base: "sm", lg: "md" }}
                       // @ts-ignore
                       textAlign={{ base: "center", lg: "none" }}
                     >
@@ -185,9 +161,7 @@ export function Dashboard({
                 <VStack
                   alignItems="center"
                   space={3}
-                  // flex={{ base: 1, lg: "none" }}
-                  flex={1}
-                  textAlign="center"
+                  flex={{ base: 1, lg: "none" }}
                 >
                   <Circle
                     // @ts-ignore
@@ -206,8 +180,7 @@ export function Dashboard({
                   <Text
                     color="coolGray.500"
                     fontWeight={600}
-                    // fontSize={{ base: "sm", lg: "md" }}
-                    fontSize="sm"
+                    fontSize={{ base: "sm", lg: "md" }}
                     textAlign={{ base: "center", lg: "inherit" }}
                   >
                     Transfer Money
@@ -216,9 +189,7 @@ export function Dashboard({
                 <VStack
                   alignItems="center"
                   space={3}
-                  // flex={{ base: 1, lg: "none" }}
-                  flex={1}
-                  textAlign="center"
+                  flex={{ base: 1, lg: "none" }}
                 >
                   <Circle
                     // @ts-ignore
@@ -237,8 +208,7 @@ export function Dashboard({
                   <Text
                     color="coolGray.500"
                     fontWeight={600}
-                    // fontSize={{ base: "sm", lg: "md" }}
-                    fontSize="sm"
+                    fontSize={{ base: "sm", lg: "md" }}
                     textAlign={{ base: "center", lg: "inherit" }}
                   >
                     Add Money
@@ -327,65 +297,62 @@ export function Dashboard({
                     bg="white"
                     _web={{ flex: isLargeScreen ? 1 : "none" }}
                     overflow="hidden"
-                    space={4}
-                    pt={6}
                   >
-                    {/* <VStack > */}
-                    <Text
-                      bold
-                      color="coolGray.500"
-                      mx={6}
-                      // fontSize={{ base: "md", lg: "lg" }}
-                    >
-                      Total sent
-                    </Text>
-                    <HStack alignItems="flex-end" mx={6} mb={4} flexWrap="wrap">
-                      <Text
-                        // fontSize={{ base: "2xl", xl: "3xl" }}
-                        fontSize="xl"
-                        lineHeight={6}
-                        mr={3}
-                      >
-                        $1,247.80
-                      </Text>
-                      <Icon
-                        as={<VectorIcons.Ionicons name="arrow-up-outline" />}
-                        size="xs"
-                        color="green.500"
-                        //Todo:
-                        // -3 as number is not working
-                        // margin/layout-props not working
-                        mb={3}
-                        mr={8}
-                      ></Icon>
+                    <VStack space={4} pt={6}>
                       <Text
                         bold
-                        color="green.700"
-                        // fontSize={{ base: "md", lg: "lg" }}
+                        color="coolGray.500"
+                        mx={6}
+                        fontSize={{ base: "md", lg: "lg" }}
                       >
-                        11%
+                        Total sent
                       </Text>
-                    </HStack>
-                    <Center bg="blueGray.50" p={4} mt="auto">
-                      <HStack alignItems="center">
+                      <HStack alignItems="flex-end" mx={6} mb={4}>
                         <Text
-                          fontWeight={600}
-                          color="coolGray.600"
-                          // fontSize={{ base: "md", lg: "lg" }}
+                          fontSize={{ base: "2xl", lg: "3xl" }}
+                          lineHeight={7}
+                          mr={3}
                         >
-                          View all sent
+                          $1,247.80
                         </Text>
                         <Icon
-                          size="sm"
-                          as={
-                            <VectorIcons.MaterialCommunityIcons name="chevron-right" />
-                          }
-                          color="coolGray.500"
-                        />
+                          as={<VectorIcons.Ionicons name="arrow-up-outline" />}
+                          size="xs"
+                          color="red.600"
+                          //Todo:
+                          // -3 as number is not working
+                          // margin/layout-props not working
+                          mb={3}
+                          mr={8}
+                        ></Icon>
+                        <Text
+                          bold
+                          color="orange.900"
+                          fontSize={{ base: "md", lg: "lg" }}
+                        >
+                          11%
+                        </Text>
                       </HStack>
-                    </Center>
+                      <Center bg="blueGray.50" p={4}>
+                        <HStack alignItems="center">
+                          <Text
+                            fontWeight={600}
+                            color="coolGray.600"
+                            fontSize={{ base: "md", lg: "lg" }}
+                          >
+                            View all sent
+                          </Text>
+                          <Icon
+                            size="sm"
+                            as={
+                              <VectorIcons.MaterialCommunityIcons name="chevron-right" />
+                            }
+                            color="coolGray.500"
+                          />
+                        </HStack>
+                      </Center>
+                    </VStack>
                   </VStack>
-                  {/* </VStack> */}
                 </Tooltip>
                 <Tooltip
                   label="Total money received this week"
@@ -398,64 +365,61 @@ export function Dashboard({
                     bg="white"
                     _web={{ flex: isLargeScreen ? 1 : "none" }}
                     overflow="hidden"
-                    space={4}
-                    pt={6}
                   >
-                    {/* <VStack space={4} pt={6}> */}
-                    <Text
-                      bold
-                      color="coolGray.500"
-                      mx={6}
-                      // fontSize={{ base: "md", lg: "lg" }}
-                    >
-                      Received
-                    </Text>
-                    <HStack alignItems="flex-end" mx={6} mb={4} flexWrap="wrap">
-                      <Text
-                        // fontSize={{ base: "2xl", xl: "3xl" }}
-                        fontSize="xl"
-                        lineHeight={6}
-                        mr={3}
-                      >
-                        $540.44
-                      </Text>
-                      <Icon
-                        as={<VectorIcons.Ionicons name="arrow-up-outline" />}
-                        size="xs"
-                        color="green.500"
-                        //Todo:
-                        // -3 as number is not working
-                        // margin/layout-props not working
-                        mb={3}
-                        mr={8}
-                      ></Icon>
+                    <VStack space={4} pt={6}>
                       <Text
                         bold
-                        color="green.700"
-                        // fontSize={{ base: "md", lg: "lg" }}
+                        color="coolGray.500"
+                        mx={6}
+                        fontSize={{ base: "md", lg: "lg" }}
                       >
-                        5%
+                        Received
                       </Text>
-                    </HStack>
-                    {/* </VStack> */}
-                    <Center bg="blueGray.50" p={4} mt="auto">
-                      <HStack alignItems="center">
+                      <HStack alignItems="flex-end" mx={6} mb={4}>
                         <Text
-                          fontWeight={600}
-                          color="coolGray.600"
-                          // fontSize={{ base: "md", lg: "lg" }}
+                          fontSize={{ base: "2xl", lg: "3xl" }}
+                          lineHeight={7}
+                          mr={3}
                         >
-                          View all received
+                          $540.44
                         </Text>
                         <Icon
-                          size="sm"
-                          as={
-                            <VectorIcons.MaterialCommunityIcons name="chevron-right" />
-                          }
-                          color="coolGray.500"
-                        />
+                          as={<VectorIcons.Ionicons name="arrow-up-outline" />}
+                          size="xs"
+                          color="green.500"
+                          //Todo:
+                          // -3 as number is not working
+                          // margin/layout-props not working
+                          mb={3}
+                          mr={8}
+                        ></Icon>
+                        <Text
+                          bold
+                          color="green.700"
+                          fontSize={{ base: "md", lg: "lg" }}
+                        >
+                          5%
+                        </Text>
                       </HStack>
-                    </Center>
+                      <Center bg="blueGray.50" p={4} mt="auto">
+                        <HStack alignItems="center">
+                          <Text
+                            fontWeight={600}
+                            color="coolGray.600"
+                            fontSize={{ base: "md", lg: "lg" }}
+                          >
+                            View all received
+                          </Text>
+                          <Icon
+                            size="sm"
+                            as={
+                              <VectorIcons.MaterialCommunityIcons name="chevron-right" />
+                            }
+                            color="coolGray.500"
+                          />
+                        </HStack>
+                      </Center>
+                    </VStack>
                   </VStack>
                 </Tooltip>
                 <Tooltip
@@ -469,64 +433,63 @@ export function Dashboard({
                     bg="white"
                     _web={{ flex: isLargeScreen ? 1 : "none" }}
                     overflow="hidden"
-                    pt={6}
-                    space={4}
                   >
-                    {/* <VStack pt={6} space={4} flex={1}> */}
-                    <Text
-                      bold
-                      color="coolGray.500"
-                      mx={6}
-                      // fontSize={{ base: "md", lg: "lg" }}
-                    >
-                      Outstanding
-                    </Text>
-                    <HStack alignItems="flex-end" mx={6} mb={4} flexWrap="wrap">
-                      <Text
-                        // fontSize={{ base: "2xl", xl: "3xl" }}
-                        fontSize="xl"
-                        lineHeight={6}
-                        mr={3}
-                      >
-                        $300.00
-                      </Text>
-                      <Icon
-                        as={<VectorIcons.Ionicons name="arrow-down-outline" />}
-                        size="xs"
-                        color="red.600"
-                        //Todo:
-                        // -3 as number is not working
-                        // margin/layout-props not working
-                        mb={3}
-                        mr={8}
-                      ></Icon>
+                    <VStack pt={6} space={4}>
                       <Text
                         bold
-                        color="orange.900"
-                        // fontSize={{ base: "md", lg: "lg" }}
+                        color="coolGray.500"
+                        mx={6}
+                        fontSize={{ base: "md", lg: "lg" }}
                       >
-                        8%
+                        Outstanding
                       </Text>
-                    </HStack>
-                    {/* </VStack> */}
-                    <Center bg="blueGray.50" p={4}>
-                      <HStack alignItems="center">
+                      <HStack alignItems="flex-end" mx={6} mb={4}>
                         <Text
-                          fontWeight={600}
-                          color="coolGray.600"
-                          // fontSize={{ base: "md", lg: "lg" }}
+                          fontSize={{ base: "2xl", lg: "3xl" }}
+                          lineHeight={7}
+                          mr={3}
                         >
-                          View all outstanding
+                          $300.00
                         </Text>
                         <Icon
-                          size="sm"
                           as={
-                            <VectorIcons.MaterialCommunityIcons name="chevron-right" />
+                            <VectorIcons.Ionicons name="arrow-down-outline" />
                           }
-                          color="coolGray.500"
-                        />
+                          size="xs"
+                          color="green.500"
+                          //Todo:
+                          // -3 as number is not working
+                          // margin/layout-props not working
+                          mb={3}
+                          mr={8}
+                        ></Icon>
+                        <Text
+                          bold
+                          color="green.700"
+                          fontSize={{ base: "md", lg: "lg" }}
+                        >
+                          8%
+                        </Text>
                       </HStack>
-                    </Center>
+                      <Center mt="auto" bg="blueGray.50" p={4}>
+                        <HStack alignItems="center">
+                          <Text
+                            fontWeight={600}
+                            color="coolGray.600"
+                            fontSize={{ base: "md", lg: "lg" }}
+                          >
+                            View all outstanding
+                          </Text>
+                          <Icon
+                            size="sm"
+                            as={
+                              <VectorIcons.MaterialCommunityIcons name="chevron-right" />
+                            }
+                            color="coolGray.500"
+                          />
+                        </HStack>
+                      </Center>
+                    </VStack>
                   </VStack>
                 </Tooltip>
               </Stack>

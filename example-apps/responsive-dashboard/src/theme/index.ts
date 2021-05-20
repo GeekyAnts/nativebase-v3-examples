@@ -14,7 +14,7 @@ export const DashboardTheme = extendTheme({
     },
     Text: {
       defaultProps: {
-        fontSize: "sm",
+        fontSize: "lg",
       },
     },
     Input: {

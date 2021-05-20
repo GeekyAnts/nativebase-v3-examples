@@ -61,8 +61,7 @@ export function Setting({
                   <Text
                     mb={5}
                     bold
-                    // fontSize={{ base: "lg", lg: "xl" }}
-                    fontSize="lg"
+                    fontSize={{ base: "lg", lg: "xl" }}
                     flex={{ base: "none", lg: 1 }}
                   >
                     Personal Info
@@ -70,10 +69,7 @@ export function Setting({
                   <VStack space={5} flex={{ base: "none", lg: 2 }}>
                     <FormControl>
                       <FormControl.Label>
-                        <Text
-                          bold
-                          // fontSize={{ base: "md", lg: "md" }}
-                        >
+                        <Text bold fontSize={{ base: "md", lg: "lg" }}>
                           Name
                         </Text>
                       </FormControl.Label>
@@ -81,10 +77,7 @@ export function Setting({
                     </FormControl>
                     <FormControl>
                       <FormControl.Label>
-                        <Text
-                          bold
-                          // fontSize={{ base: "md", lg: "lg" }}
-                        >
+                        <Text bold fontSize={{ base: "md", lg: "lg" }}>
                           Email
                         </Text>
                       </FormControl.Label>
@@ -92,10 +85,7 @@ export function Setting({
                     </FormControl>
                     <FormControl>
                       <FormControl.Label>
-                        <Text
-                          bold
-                          // fontSize={{ base: "md", lg: "lg" }}
-                        >
+                        <Text bold fontSize={{ base: "md", lg: "lg" }}>
                           Bio
                         </Text>
                       </FormControl.Label>
@@ -114,8 +104,7 @@ export function Setting({
                 >
                   <Text
                     bold
-                    // fontSize={{ base: "lg", lg: "xl" }}
-                    fontSize="lg"
+                    fontSize={{ base: "lg", lg: "xl" }}
                     flex={{ base: "none", lg: 1 }}
                   >
                     Profile Photo
@@ -128,8 +117,7 @@ export function Setting({
                   >
                     <Avatar
                       //@ts-ignore
-                      // size={isLargeScreen ? "2xl" : "lg"}
-                      size={isLargeScreen ? "xl" : "lg"}
+                      size={isLargeScreen ? "2xl" : "lg"}
                       source={{
                         uri: "https://avatars.githubusercontent.com/u/23293248",
                       }}
@@ -142,13 +130,13 @@ export function Setting({
                           colorScheme="blueGray"
                           //@ts-ignore
                           variant="subtle"
-                          size={isLargeScreen ? "sm" : "xs"}
+                          size={isLargeScreen ? "md" : "xs"}
                         >
                           Change Photo
                         </Button>
                         <Button
                           variant="ghost"
-                          size={isLargeScreen ? "sm" : "xs"}
+                          size={isLargeScreen ? "md" : "xs"}
                           colorScheme="danger"
                         >
                           Delete
@@ -156,12 +144,12 @@ export function Setting({
                       </HStack>
 
                       <Text
-                        // fontSize={{ base: "sm", lg: "md" }}
-                        fontSize="sm"
+                        fontSize={{ base: "sm", lg: "md" }}
                         color="blueGray.500"
                         mt={2}
                       >
-                        .jpg, .gif, or .png. Max file size 700K.
+                        .jpg, .gif, or .png. Max file size 700K. jdsbjhvbdfv
+                        jsdndjf
                       </Text>
                     </VStack>
                   </HStack>
@@ -174,8 +162,7 @@ export function Setting({
                 >
                   <Text
                     bold
-                    // fontSize={{ base: "lg", lg: "xl" }}
-                    fontSize="lg"
+                    fontSize={{ base: "lg", lg: "xl" }}
                     flex={{ base: "none", lg: 1 }}
                   >
                     Language
@@ -183,10 +170,8 @@ export function Setting({
                   <VStack space={5} flex={{ base: "none", lg: 2 }}>
                     <FormControl>
                       <FormControl.Label>
-                        <Text
-                          bold
-                          // fontSize={{ base: "md", lg: "lg" }}
-                        >
+                        <Text bold fontSize={{ base: "md", lg: "lg" }}>
+                          {" "}
                           Display Language
                         </Text>
                       </FormControl.Label>
@@ -204,10 +189,8 @@ export function Setting({
                     </FormControl>
                     <FormControl>
                       <FormControl.Label>
-                        <Text
-                          bold
-                          // fontSize={{ base: "md", lg: "lg" }}
-                        >
+                        <Text bold fontSize={{ base: "md", lg: "lg" }}>
+                          {" "}
                           Display Currency
                         </Text>
                       </FormControl.Label>
@@ -233,26 +216,19 @@ export function Setting({
                 >
                   <Text
                     bold
-                    // fontSize={{ base: "lg", lg: "xl" }}
-                    fontSize="lg"
+                    fontSize={{ base: "lg", lg: "xl" }}
                     flex={{ base: "none", lg: 1 }}
                   >
                     Notification
                   </Text>
                   <VStack space={5} flex={{ base: "none", lg: 2 }}>
                     <Checkbox value="" colorScheme="blue">
-                      <Text
-                        ml={2}
-                        // fontSize={{ base: "md", lg: "lg" }}
-                      >
+                      <Text ml={2} fontSize={{ base: "md", lg: "lg" }}>
                         Get updates about the latest meetups.
                       </Text>
                     </Checkbox>
                     <Checkbox defaultIsChecked value="" colorScheme="blue">
-                      <Text
-                        ml={2}
-                        // fontSize={{ base: "md", lg: "lg" }}
-                      >
+                      <Text ml={2} fontSize={{ base: "md", lg: "lg" }}>
                         Get notifications about your account activities
                       </Text>
                     </Checkbox>
@@ -265,8 +241,7 @@ export function Setting({
                 >
                   <Text
                     bold
-                    // fontSize={{ base: "lg", lg: "xl" }}
-                    fontSize="lg"
+                    fontSize={{ base: "lg", lg: "xl" }}
                     flex={{ base: "none", lg: 1 }}
                   >
                     Payment Method
@@ -279,10 +254,7 @@ export function Setting({
                   >
                     <HStack shadow={4} rounded={12} p={6} space={1} bg="white">
                       <VStack space={1}>
-                        <Text
-                          bold
-                          // fontSize={{ base: "md", lg: "lg" }}
-                        >
+                        <Text bold fontSize={{ base: "md", lg: "lg" }}>
                           Visa ending in 5555
                         </Text>
                         <Text color="coolGray.400" fontSize="sm">
@@ -298,7 +270,7 @@ export function Setting({
                           _text={{
                             color: "black",
                             // @ts-ignore
-                            // fontSize: `${isLargeScreen ? "lg" : "sm"}`,
+                            fontSize: `${isLargeScreen ? "lg" : "sm"}`,
                           }}
                         >
                           Update

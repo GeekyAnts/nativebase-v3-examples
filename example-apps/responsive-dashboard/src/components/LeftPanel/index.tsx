@@ -51,7 +51,7 @@ export function LeftPanel({
         <Text color="coolGray.400" fontWeight={500}>
           Your Balance
         </Text>
-        <Text color="coolGray.200" fontSize="xl">
+        <Text color="coolGray.200" fontSize="3xl">
           $2,550.40
         </Text>
         <Button
@@ -228,7 +228,7 @@ export function LeftPanel({
         overflow="hidden"
         justifyContent="center"
       >
-        <HStack alignItems="center" mx={2} space={3}>
+        <HStack alignItems="center" mx={2}>
           <HStack alignItems="center" space="sm" ml={2}>
             <Logo size={12} />
             <Heading color="white" size="sm">
