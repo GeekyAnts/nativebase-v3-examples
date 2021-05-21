@@ -14,17 +14,23 @@ import {
   HStack,
   Heading,
   AddIcon,
+  Stack,
 } from "native-base";
-
+import { customTheme } from "./theme";
 export default function App() {
   return (
-    <NativeBaseProvider>
-      <Center flex={1}>
-        <HStack rounded="xl" shadow={2} overflow="hidden">
-          <Box flex={1} bg="blueGray.50" p={8}>
+    <NativeBaseProvider theme={customTheme}>
+      <Center flex={1} p={4}>
+        <Stack
+          direction={{ base: "column", md: "row" }}
+          rounded="xl"
+          shadow={2}
+          overflow="hidden"
+        >
+          <Box flex={{ base: "none", md: 1 }} bg="blueGray.50" p={8}>
             <Heading>Events</Heading>
           </Box>
-          <Box flex={2} alignItems="flex-end" p={8}>
+          <Box flex={{ base: "none", md: 2 }} alignItems="flex-end" p={8}>
             <VStack alignItems="flex-end" space={4}>
               <FormControl>
                 <FormControl.Label>What's your event called?</FormControl.Label>
@@ -50,12 +56,12 @@ export default function App() {
               <Divider />
               <Checkbox value="tnc" alignItems="flex-start" mb={4}>
                 By Agreeing to this you confirm that you are the organizer of
-                the even and have read our T&C
+                the event and have read our T&C
               </Checkbox>
             </VStack>
             <Button endIcon={<AddIcon size={3} />}>Create Event</Button>
           </Box>
-        </HStack>
+        </Stack>
       </Center>
     </NativeBaseProvider>
   );
