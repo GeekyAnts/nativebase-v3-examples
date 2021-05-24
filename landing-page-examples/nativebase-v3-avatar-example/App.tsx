@@ -23,7 +23,7 @@ function UseBreakpointValueExample() {
       </Box>
       <Box alignItems="flex-end" p={8}>
         {/* @ts-ignore */}
-        <Avatar.Group size="lg" max={isSM ? 5 : 3}>
+        <Avatar.Group size="lg" max={isSM ? 5 : 3} borderWidth={4}>
           <Avatar
             source={{
               uri:
