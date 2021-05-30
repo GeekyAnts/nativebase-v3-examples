@@ -24,49 +24,49 @@ export default function App() {
   ];
   return (
     <NativeBaseProvider>
-      <Center flex={1} p={4}>
-        <Stack rounded="xl" shadow={2} overflow="hidden">
-          <Box bg="blueGray.100" px={8} py={6}>
-            <Heading size="sm">Choose your Subsription</Heading>
-          </Box>
-          <Box p={8}>
-            <Button.Group
-              // @ts-ignore
-              direction={{ base: "column", md: "row" }}
-              variant="unstyled"
-              space={4}
-            >
-              {plans.map(
-                (plan: any, ind: string | number | null | undefined) => {
-                  return (
-                    <Button
-                      key={ind}
-                      justifyContent="flex-start"
-                      p={8}
-                      rounded="xl"
-                      shadow={7}
-                      bg={`${plan.color}.500`}
-                      _hover={{ bg: `${plan.color}.600` }}
-                      _focus={{ bg: `${plan.color}.600`, shadow: 3 }}
-                      _pressed={{ shadow: 3 }}
-                    >
-                      <Box _text={{ color: "white", fontWeight: "semibold" }}>
-                        <Heading size="sm" color="white" mb={4}>
-                          {plan.name}
-                        </Heading>
-                        {`${plan.price}$ | ${
-                          plan.duration === 1
-                            ? plan.duration + " Month"
-                            : plan.duration + " Months"
-                        }`}
-                      </Box>
-                    </Button>
-                  );
-                }
-              )}
-            </Button.Group>
-          </Box>
-        </Stack>
+      <Center flex={1}>
+        <Box p={8}>
+          <Button.Group
+            // @ts-ignore
+            direction={{ base: "column", sm: "row" }}
+            variant="unstyled"
+            space={2}
+          >
+            {plans.map((plan: any, ind: string | number | null | undefined) => {
+              return (
+                <Button
+                  key={ind}
+                  justifyContent="flex-start"
+                  p={6}
+                  rounded="lg"
+                  shadow={0}
+                  bg={`${plan.color}.500`}
+                  _hover={{ bg: `${plan.color}.600` }}
+                  _focus={{ bg: `${plan.color}.600`, shadow: 3 }}
+                  _pressed={{ shadow: 3 }}
+                >
+                  <Box>
+                    <Heading size="xs" color="white" mb={4}>
+                      {plan.name}
+                    </Heading>
+                    <Text color="white" fontWeight="semibold">
+                      {`$${plan.price} | `}
+                      <Text
+                        color="white"
+                        fontWeight="semibold"
+                        fontSize="xs"
+                      >{`${
+                        plan.duration === 1
+                          ? plan.duration + " Month"
+                          : plan.duration + " Months"
+                      }`}</Text>
+                    </Text>
+                  </Box>
+                </Button>
+              );
+            })}
+          </Button.Group>
+        </Box>
       </Center>
     </NativeBaseProvider>
   );
