@@ -88,7 +88,8 @@ export function Dashboard({
                     // @ts-ignore
                     size={{ base: 24, lg: 16 }}
                     source={{
-                      uri: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80",
+                      uri:
+                        "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80",
                     }}
                   >
                     JD
@@ -191,72 +192,79 @@ export function Dashboard({
                       </Text>
                     </VStack>
                   </Tooltip>
-                  <VStack
-                    alignItems="center"
-                    space={3}
-                    // flex={{ base: 1, xl: "none" }}
-                    flex={1}
-                    textAlign="center"
+                  <Tooltip
+                    label="Transfer money to your bank a/c"
+                    openDelay={500}
                   >
-                    <Circle
-                      // @ts-ignore
-                      // size={{ base: 12, lg: 16 }}
-                      size={12}
-                      borderWidth={3}
-                      borderColor="blueGray.200"
+                    <VStack
+                      alignItems="center"
+                      space={3}
+                      // flex={{ base: 1, xl: "none" }}
+                      flex={1}
+                      textAlign="center"
                     >
-                      <Icon
-                        as={<VectorIcons.Ionicons name="swap-horizontal" />}
+                      <Circle
                         // @ts-ignore
-                        // size={{ base: 6, lg: 8 }}
-                        size={6}
-                        color="blueGray.500"
-                      />
-                    </Circle>
+                        // size={{ base: 12, lg: 16 }}
+                        size={12}
+                        borderWidth={3}
+                        borderColor="blueGray.200"
+                      >
+                        <Icon
+                          as={<VectorIcons.Ionicons name="swap-horizontal" />}
+                          // @ts-ignore
+                          // size={{ base: 6, lg: 8 }}
+                          size={6}
+                          color="blueGray.500"
+                        />
+                      </Circle>
 
-                    <Text
-                      color="coolGray.500"
-                      fontWeight={600}
-                      // fontSize={{ base: "sm", lg: "md" }}
-                      fontSize="xs"
-                      textAlign={{ base: "center", lg: "inherit" }}
+                      <Text
+                        color="coolGray.500"
+                        fontWeight={600}
+                        // fontSize={{ base: "sm", lg: "md" }}
+                        fontSize="xs"
+                        textAlign={{ base: "center", lg: "inherit" }}
+                      >
+                        Transfer Money
+                      </Text>
+                    </VStack>
+                  </Tooltip>
+                  <Tooltip label="Add money to your wallet" openDelay={500}>
+                    <VStack
+                      alignItems="center"
+                      space={3}
+                      // flex={{ base: 1, xl: "none" }}
+                      flex={1}
+                      textAlign="center"
                     >
-                      Transfer Money
-                    </Text>
-                  </VStack>
-                  <VStack
-                    alignItems="center"
-                    space={3}
-                    // flex={{ base: 1, xl: "none" }}
-                    flex={1}
-                    textAlign="center"
-                  >
-                    <Circle
-                      // @ts-ignore
-                      // size={{ base: 12, lg: 16 }}
-                      size={12}
-                      borderWidth={3}
-                      borderColor="blueGray.200"
-                    >
-                      <Icon
-                        as={<VectorIcons.AntDesign name="plus" />}
+                      <Circle
                         // @ts-ignore
-                        // size={{ base: 6, lg: 8 }}
-                        size={6}
-                        color="blueGray.500"
-                      />
-                    </Circle>
+                        // size={{ base: 12, lg: 16 }}
+                        size={12}
+                        borderWidth={3}
+                        borderColor="blueGray.200"
+                      >
+                        <Icon
+                          as={<VectorIcons.AntDesign name="plus" />}
+                          // @ts-ignore
+                          // size={{ base: 6, lg: 8 }}
+                          size={6}
+                          color="blueGray.500"
+                        />
+                      </Circle>
 
-                    <Text
-                      color="coolGray.500"
-                      fontWeight={600}
-                      // fontSize={{ base: "sm", lg: "md" }}
-                      fontSize="xs"
-                      textAlign={{ base: "center", lg: "inherit" }}
-                    >
-                      Add Money
-                    </Text>
-                  </VStack>
+                      <Text
+                        color="coolGray.500"
+                        fontWeight={600}
+                        // fontSize={{ base: "sm", lg: "md" }}
+                        fontSize="xs"
+                        textAlign={{ base: "center", lg: "inherit" }}
+                      >
+                        Add Money
+                      </Text>
+                    </VStack>
+                  </Tooltip>
                 </HStack>
               </Stack>
             </Box>
