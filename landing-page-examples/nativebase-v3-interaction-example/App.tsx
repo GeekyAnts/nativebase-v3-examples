@@ -88,25 +88,6 @@ export default function App() {
               );
             })}
           </Menu.Group>
-          <Divider mt={2} />
-          <Menu.Group rounded="lg" title="Others"></Menu.Group>
-          {otherItems.map((item, idx) => {
-            return (
-              <Menu.Item pr={20} py={2} key={idx}>
-                <HStack space={4} alignItems="center">
-                  <Circle size={10} bg="gray.200">
-                    {item.icon}
-                  </Circle>
-                  <VStack space={1}>
-                    <Text fontSize="sm" fontWeight="bold">
-                      {item.title}
-                    </Text>
-                    <Text fontSize="xs">{item.caption}</Text>
-                  </VStack>
-                </HStack>
-              </Menu.Item>
-            );
-          })}
         </Menu>
       </Center>
     </NativeBaseProvider>
