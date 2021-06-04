@@ -29,7 +29,7 @@ export default function App() {
 
   return (
     <NativeBaseProvider>
-      <Center mt={-40} flex={1} bg="gray.100">
+      <Center mt={-40} flex={1} bg="white">
         <Menu
           placement="bottom"
           defaultIsOpen
