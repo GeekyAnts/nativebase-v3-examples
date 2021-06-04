@@ -26,18 +26,7 @@ export default function App() {
       icon: <Ionicons name="videocam" size={18} color="black" />,
     },
   ];
-  const otherItems = [
-    {
-      title: "Settings",
-      caption: "Privacy Settings",
-      icon: <Ionicons name="settings" size={20} color="black" />,
-    },
-    {
-      title: "Display",
-      caption: "Switch Color Mode",
-      icon: <MoonIcon size={5} />,
-    },
-  ];
+
   return (
     <NativeBaseProvider>
       <Center mt={-40} flex={1} bg="gray.100">
