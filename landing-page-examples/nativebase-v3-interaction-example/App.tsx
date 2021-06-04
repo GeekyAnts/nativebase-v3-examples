@@ -2,71 +2,112 @@ import React, { Children } from "react";
 import {
   NativeBaseProvider,
   Center,
-  FormControl,
-  Button,
-  Input,
   Box,
   VStack,
-  Select,
-  Radio,
-  Checkbox,
+  Menu,
+  MoonIcon,
+  Circle,
+  IconButton,
   Divider,
   HStack,
-  Heading,
   Text,
-  Stack,
 } from "native-base";
+import { FontAwesome5, AntDesign, Ionicons } from "@expo/vector-icons";
 export default function App() {
-  const plans: any = [
-    { name: "Premium", price: "759", duration: 9, color: "violet" },
-    { name: "VIP", price: "450", duration: 4, color: "green" },
-    { name: "Gold", price: "120", duration: 1, color: "amber" },
+  const createItems = [
+    {
+      title: "Post",
+      caption: "Share a Post on news feed",
+      icon: <FontAwesome5 name="user-edit" size={18} color="black" />,
+    },
+    {
+      title: "Room",
+      caption: "Video chat with anyone",
+      icon: <Ionicons name="videocam" size={18} color="black" />,
+    },
+  ];
+  const otherItems = [
+    {
+      title: "Settings",
+      caption: "Privacy Settings",
+      icon: <Ionicons name="settings" size={20} color="black" />,
+    },
+    {
+      title: "Display",
+      caption: "Switch Color Mode",
+      icon: <MoonIcon size={5} />,
+    },
   ];
   return (
     <NativeBaseProvider>
-      <Center flex={1}>
-        <Box p={8}>
-          <Button.Group
-            // @ts-ignore
-            direction={{ base: "column", sm: "row" }}
-            variant="unstyled"
-            space={2}
-          >
-            {plans.map((plan: any, ind: string | number | null | undefined) => {
+      <Center mt={-40} flex={1} bg="gray.100">
+        <Menu
+          placement="bottom"
+          defaultIsOpen
+          offset={5}
+          closeOnSelect={false}
+          trigger={(triggerProps) => {
+            return (
+              <IconButton
+                colorScheme="primary"
+                variant="solid"
+                rounded="full"
+                height="12"
+                width="12"
+                icon={<AntDesign name="plus" size={24} color="white" />}
+                {...triggerProps}
+              />
+            );
+          }}
+        >
+          <Menu.Group rounded="lg" title="Create">
+            {createItems.map((item, idx) => {
               return (
-                <Button
-                  key={ind}
-                  justifyContent="flex-start"
-                  p={6}
-                  rounded="lg"
-                  shadow={0}
-                  bg={`${plan.color}.500`}
-                  _hover={{ bg: `${plan.color}.600` }}
-                  _focus={{ bg: `${plan.color}.600`, shadow: 3 }}
-                  _pressed={{ shadow: 3 }}
+                <Menu.Item
+                  // _focus={{ bg: "red.500" }}
+                  // _hover={{ bg: "blue.500" }}
+                  // _pressed={{ bg: "pink.500" }}
+                  pr={20}
+                  py={2}
+                  key={idx}
                 >
-                  <Box>
-                    <Heading size="xs" color="white" mb={4}>
-                      {plan.name}
-                    </Heading>
-                    <Text color="white" fontWeight="semibold">
-                      {`$${plan.price} | `}
-                      <Text
-                        color="white"
-                        fontWeight="semibold"
-                        fontSize="xs"
-                      >{`${
-                        plan.duration === 1
-                          ? plan.duration + " Month"
-                          : plan.duration + " Months"
-                      }`}</Text>
-                    </Text>
-                  </Box>
-                </Button>
+                  <HStack space={4} alignItems="center">
+                    <Circle rounded="full" bg="gray.200">
+                      <Circle size={10} bg="gray.200">
+                        {item.icon}
+                      </Circle>
+                    </Circle>
+                    <VStack space={1}>
+                      <Text fontSize="sm" fontWeight="bold">
+                        {item.title}
+                      </Text>
+                      <Text fontSize="xs">{item.caption}</Text>
+                    </VStack>
+                  </HStack>
+                </Menu.Item>
               );
             })}
-          </Button.Group>
-        </Box>
+          </Menu.Group>
+          <Divider mt={2} />
+          <Menu.Group rounded="lg" title="Others"></Menu.Group>
+          {otherItems.map((item, idx) => {
+            return (
+              <Menu.Item pr={20} py={2} key={idx}>
+                <HStack space={4} alignItems="center">
+                  <Circle size={10} bg="gray.200">
+                    {item.icon}
+                  </Circle>
+                  <VStack space={1}>
+                    <Text fontSize="sm" fontWeight="bold">
+                      {item.title}
+                    </Text>
+                    <Text fontSize="xs">{item.caption}</Text>
+                  </VStack>
+                </HStack>
+              </Menu.Item>
+            );
+          })}
+        </Menu>
       </Center>
     </NativeBaseProvider>
   );
