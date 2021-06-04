@@ -3,11 +3,13 @@ import {
   Heading,
   useColorMode,
   Button,
-  HStack,
-  Avatar,
+  Input,
   Center,
   useColorModeValue,
+  FormControl,
   NativeBaseProvider,
+  Stack,
+  SunIcon,
 } from "native-base";
 
 function HomeScreen() {
@@ -22,34 +24,13 @@ function HomeScreen() {
   }, []);
 
   return (
-    <Center flex={1} bg={useColorModeValue("gray.200", "gray.800")}>
-      <Heading>I'm a Heading</Heading>
-      <Button
-        colorScheme={colorMode === "light" ? "blue" : "red"}
-        onPress={() => {
-          toggleColorMode();
-        }}
-      >
-        Change mode
-      </Button>
-      <HStack space={2} mt={3}>
-        <Avatar
-          name="Ankur"
-          borderWidth={2}
-          source={{
-            uri:
-              "https://pbs.twimg.com/profile_images/1309797238651060226/18cm6VhQ_400x400.jpg",
-          }}
-        />
-        <Avatar
-          name="Rohit"
-          borderWidth={2}
-          source={{
-            uri:
-              "https://pbs.twimg.com/profile_images/1352844693151731713/HKO7cnlW_400x400.jpg",
-          }}
-        />
-      </HStack>
+    <Center flex={1} bg={useColorModeValue("blueGray.100", "blueGray.800")}>
+      <Stack space={4} >
+        <FormControl>
+        <Input placeholder="Chat Room ID" />
+        </FormControl>
+        <Button>Join In</Button>
+      </Stack>
     </Center>
   );
 }
