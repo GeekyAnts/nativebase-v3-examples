@@ -9,6 +9,8 @@ import {
   FormControl,
   NativeBaseProvider,
   Stack,
+  Spacer,
+  ArrowForwardIcon,
   SunIcon,
 } from "native-base";
 
@@ -25,11 +27,13 @@ function HomeScreen() {
 
   return (
     <Center flex={1} bg={useColorModeValue("blueGray.100", "blueGray.800")}>
-      <Stack space={4} >
+      <Stack space={4}>
         <FormControl>
-        <Input placeholder="Chat Room ID" />
+          <Input placeholder="Chat Room ID" />
         </FormControl>
-        <Button>Join In</Button>
+        <Button colorScheme="green" endIcon={<ArrowForwardIcon size={6} />}>
+          Join In
+        </Button>
       </Stack>
     </Center>
   );
