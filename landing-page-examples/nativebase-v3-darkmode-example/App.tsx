@@ -1,21 +1,44 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { useEffect } from "react";
+import {
+  Heading,
+  useColorMode,
+  Button,
+  Input,
+  Center,
+  useColorModeValue,
+  FormControl,
+  NativeBaseProvider,
+  Stack,
+  SunIcon,
+} from "native-base";
 
-export default function App() {
+function HomeScreen() {
+  const { colorMode, toggleColorMode } = useColorMode();
+
+  useEffect(() => {
+    const searchParams = new URLSearchParams(window.location.search);
+    const mode = searchParams.get("mode");
+    if (mode === "dark") {
+      toggleColorMode();
+    }
+  }, []);
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <Center flex={1} bg={useColorModeValue("blueGray.100", "blueGray.800")}>
+      <Stack space={4} >
+        <FormControl>
+        <Input placeholder="Chat Room ID" />
+        </FormControl>
+        <Button>Join In</Button>
+      </Stack>
+    </Center>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default function App() {
+  return (
+    <NativeBaseProvider>
+      <HomeScreen />
+    </NativeBaseProvider>
+  );
+}
