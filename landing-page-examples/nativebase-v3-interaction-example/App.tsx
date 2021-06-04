@@ -26,18 +26,7 @@ export default function App() {
       icon: <Ionicons name="videocam" size={18} color="black" />,
     },
   ];
-  const otherItems = [
-    {
-      title: "Settings",
-      caption: "Privacy Settings",
-      icon: <Ionicons name="settings" size={20} color="black" />,
-    },
-    {
-      title: "Display",
-      caption: "Switch Color Mode",
-      icon: <MoonIcon size={5} />,
-    },
-  ];
+
   return (
     <NativeBaseProvider>
       <Center mt={-40} flex={1} bg="gray.100">
@@ -88,25 +77,6 @@ export default function App() {
               );
             })}
           </Menu.Group>
-          <Divider mt={2} />
-          <Menu.Group rounded="lg" title="Others"></Menu.Group>
-          {otherItems.map((item, idx) => {
-            return (
-              <Menu.Item pr={20} py={2} key={idx}>
-                <HStack space={4} alignItems="center">
-                  <Circle size={10} bg="gray.200">
-                    {item.icon}
-                  </Circle>
-                  <VStack space={1}>
-                    <Text fontSize="sm" fontWeight="bold">
-                      {item.title}
-                    </Text>
-                    <Text fontSize="xs">{item.caption}</Text>
-                  </VStack>
-                </HStack>
-              </Menu.Item>
-            );
-          })}
         </Menu>
       </Center>
     </NativeBaseProvider>
