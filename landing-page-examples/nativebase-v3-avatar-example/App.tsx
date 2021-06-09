@@ -11,7 +11,7 @@ import {
 } from "native-base";
 import { MaterialCommunityIcons, MaterialIcons } from "@expo/vector-icons";
 export const Example = () => {
-  const { isOpen, onToggle } = useDisclose();
+  const { isOpen, onToggle } = useDisclose(true);
   return (
     <Box>
       <Box alignItems="center" pr={5} minH={220} >
@@ -116,6 +116,7 @@ export const Example = () => {
           openDelay={500}
           bg="blueGray.300"
           arrowSize={16}
+          rounded="md"
           _text={{
             fontSize: 16,
             bold: true,
