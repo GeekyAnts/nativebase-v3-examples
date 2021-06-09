@@ -1,108 +1,140 @@
 import React from "react";
 import {
-  NativeBaseProvider,
-  Center,
-  Button,
   Box,
-  AddIcon,
-  Avatar,
-  Stack,
-  useBreakpointValue,
+  useDisclose,
+  IconButton,
+  Stagger,
+  Center,
+  NativeBaseProvider,
+  HStack,
+  Tooltip,
 } from "native-base";
-function UseBreakpointValueExample() {
-  const isSM = useBreakpointValue({ base: false, sm: true });
+import { MaterialCommunityIcons, MaterialIcons } from "@expo/vector-icons";
+export const Example = () => {
+  const { isOpen, onToggle } = useDisclose();
   return (
-    <Box alignItems="flex-end" p={8}>
-      <Avatar.Group
-        size={isSM ? "xl" : "lg"}
-        max={isSM ? 5 : 3}
-        borderWidth={4}
-      >
-        <Avatar
-          source={{
-            uri:
-              "https://pbs.twimg.com/profile_images/1369921787568422915/hoyvrUpc_400x400.jpg",
+    <Box>
+      <Box alignItems="center" pr={5} minH={220} >
+        <Stagger
+          visible={isOpen}
+          initial={{
+            opacity: 0,
+            scale: 0,
+            translateY: 34,
+          }}
+          animate={{
+            translateY: 0,
+            scale: 1,
+            opacity: 1,
+            transition: {
+              type: "spring",
+              mass: 0.8,
+              stagger: {
+                offset: 30,
+                reverse: true,
+              },
+            },
+          }}
+          exit={{
+            translateY: 34,
+            scale: 0.5,
+            opacity: 0,
+            transition: {
+              duration: 100,
+              stagger: {
+                offset: 30,
+                reverse: true,
+              },
+            },
           }}
         >
-          SS
-        </Avatar>
-        <Avatar
-          source={{
-            uri:
-              "https://pbs.twimg.com/profile_images/1309797238651060226/18cm6VhQ_400x400.jpg",
+          <IconButton
+            mb={4}
+            variant="solid"
+            bg="indigo.400"
+            colorScheme="indigo"
+            rounded="full"
+            icon={<MaterialIcons size={24} name="location-pin" color="white" />}
+          />
+          <IconButton
+            mb={4}
+            variant="solid"
+            bg="yellow.400"
+            colorScheme="yellow"
+            rounded="full"
+            icon={
+              <MaterialCommunityIcons
+                size={24}
+                name="microphone"
+                color="white"
+              />
+            }
+          />
+          <IconButton
+            mb={4}
+            variant="solid"
+            bg="teal.400"
+            colorScheme="teal"
+            rounded="full"
+            icon={
+              <MaterialCommunityIcons size={24} name="video" color="white" />
+            }
+          />
+          <IconButton
+            mb={4}
+            variant="solid"
+            bg="red.400"
+            colorScheme="red"
+            rounded="full"
+            icon={
+              <MaterialIcons size={24} name="photo-library" color="white" />
+            }
+          />
+        </Stagger>
+      </Box>
+      <HStack space={4} alignItems="center">
+        <IconButton
+          variant="solid"
+          rounded="full"
+          size="lg"
+          onPress={onToggle}
+          bg="cyan.400"
+          icon={
+            <MaterialCommunityIcons
+              size={24}
+              name="dots-horizontal"
+              color="white"
+            />
+          }
+        />
+        <Tooltip
+          placement="right"
+          offset={8}
+          isOpen={true}
+          hasArrow={true}
+          label="Click Me!"
+          openDelay={500}
+          bg="blueGray.300"
+          arrowSize={16}
+          _text={{
+            fontSize: 16,
+            bold: true,
+            p:1,
+            color: "blueGray.600",
           }}
         >
-          AK
-        </Avatar>
-
-        <Avatar
-          source={{
-            uri:
-              "https://pbs.twimg.com/profile_images/1320985200663293952/lE_Kg6vr_400x400.jpg",
-          }}
-        >
-          MR
-        </Avatar>
-        <Avatar
-          source={{
-            uri: "https://nishan.dev/avatar.jpeg",
-          }}
-        >
-          NB
-        </Avatar>
-        <Avatar
-          source={{
-            uri:
-              "https://pbs.twimg.com/profile_images/1352844693151731713/HKO7cnlW_400x400.jpg",
-          }}
-        >
-          RS
-        </Avatar>
-        <Avatar
-          source={{
-            uri:
-              "https://pbs.twimg.com/profile_images/1177303899243343872/B0sUJIH0_400x400.jpg",
-          }}
-        >
-          AJ
-        </Avatar>
-        <Avatar
-          source={{
-            uri:
-              "https://pbs.twimg.com/profile_images/1177303899243343872/B0sUJIH0_400x400.jpg",
-          }}
-        >
-          GG
-        </Avatar>
-        <Avatar
-          source={{
-            uri:
-              "https://pbs.twimg.com/profile_images/1177303899243343872/B0sUJIH0_400x400.jpg",
-          }}
-        >
-          MM
-        </Avatar>
-
-        <Avatar
-          source={{
-            uri:
-              "https://pbs.twimg.com/profile_images/1177303899243343872/B0sUJIH0_400x400.jpg",
-          }}
-        >
-          VK
-        </Avatar>
-      </Avatar.Group>
-      <Button size="sm" mt={4} mr={1} endIcon={<AddIcon size={3} />}>
-        Add Member
-      </Button>
+          <Box></Box>
+        </Tooltip>
+      </HStack>
     </Box>
   );
-}
+};
+
 export default function App() {
   return (
     <NativeBaseProvider>
-      <Center flex={1} p={4}>
-        <UseBreakpointValueExample />
+      <Center flex={1}>
+        <Example />
       </Center>
     </NativeBaseProvider>
   );
