@@ -60,10 +60,10 @@ export const Table = () => {
                 <Text bold bg="coolGray.100" p={4} w="20%">
                   CLIENT / INVOICE
                 </Text>
-                <Text bold bg="coolGray.100" p={4} w="35%">
+                <Text bold bg="coolGray.100" p={4} w="30%">
                   TRANSACTION
                 </Text>
-                <Text bold bg="coolGray.100" p={4} w="15%">
+                <Text bold bg="coolGray.100" p={4} w="20%">
                   STATUS
                 </Text>
                 <Text bold bg="coolGray.100" p={4} w="25%">
@@ -75,11 +75,11 @@ export const Table = () => {
                 <Text bg="white" p={4} w="20%">
                   Sept 28, 2019
                 </Text>
-                <Text bg="white" p={4} w="35%">
+                <Text bg="white" p={4} w="30%">
                   Payment to Molly Sanders
                 </Text>
                 <Box
-                  w="15%"
+                  w="20%"
                   bg="white"
                   p={4}
                   alignItems="flex-start"
@@ -137,11 +137,11 @@ export const Table = () => {
                 <Text bg="coolGray.100" p={4} w="20%">
                   Sept 28, 2019
                 </Text>
-                <Text bg="coolGray.100" p={4} w="35%">
+                <Text bg="coolGray.100" p={4} w="30%">
                   Payment to John Doe
                 </Text>
                 <Box
-                  w="15%"
+                  w="20%"
                   bg="coolGray.100"
                   p={4}
                   alignItems="flex-start"
@@ -195,11 +195,11 @@ export const Table = () => {
                 <Text bg="white" p={4} w="20%">
                   Sept 28, 2019
                 </Text>
-                <Text bg="white" p={4} w="35%">
+                <Text bg="white" p={4} w="30%">
                   Payment to MacGillan Mcinsky
                 </Text>
                 <Box
-                  w="15%"
+                  w="20%"
                   bg="white"
                   p={4}
                   alignItems="flex-start"
