@@ -54,20 +54,15 @@ export function Dashboard({
       <LeftPanel navigation={navigation} />
       <ScrollView>
         <Box>
-          <Box nativeID="asdf" flex={1} maxW="1184px">
+          <Box flex={1} maxW="1184px" mx="auto" w="100%">
             <Box px={{ base: 6, lg: 16 }} bg="white">
               <Header title="Dashboard" />
               <Divider bg="gray.100" size={2.5} rounded={5} />
               <Stack
-                // @ts-ignore
-                // direction={isLargeScreen ? "row" : "column"}
                 direction={{ base: "column", xl: "row" }}
-                // my={{ base: 6, lg: 6 }}
                 my={8}
-                // alignItems={{ base: "flex-start", xl: "center" }}
                 alignItems="flex-start"
                 space={6}
-                // mt={8}
                 w="100%"
                 px={0}
               >
@@ -75,10 +70,8 @@ export function Dashboard({
                   direction={{ base: "column", md: "row" }}
                   space={6}
                   w={{ base: "100%", lg: "auto" }}
-                  // alignSelf="flex-start"
                 >
                   <Avatar
-                    // alignSelf="center"
                     alignSelf={{
                       base: "center",
                       lg: "flex-start",
@@ -104,7 +97,6 @@ export function Dashboard({
                       Good morning, Jessica Willis
                     </Text>
                     <Stack
-                      // direction={isLargeScreen ? "row" : "column"}
                       direction={{ base: "column", lg: "row" }}
                       alignItems={{ base: "flex-start", lg: "center" }}
                       space={3}
@@ -120,7 +112,6 @@ export function Dashboard({
                         <Text
                           color="slateGray.400"
                           fontWeight={600}
-                          // fontSize={{ base: "sm", md: "md" }}
                         >
                           Fairfax, Cleaveland, Ohio
                         </Text>
@@ -134,7 +125,6 @@ export function Dashboard({
                         <Text
                           color="slateGray.400"
                           fontWeight={600}
-                          // fontSize={{ base: "sm", md: "md" }}
                         >
                           Verified Account
                         </Text>
@@ -143,7 +133,7 @@ export function Dashboard({
                   </VStack>
                 </Stack>
                 <HStack
-                  // alignItems={{ base: "center", lg: "flex-start" }}
+                  
                   alignItems="flex-start"
                   space={isLargeScreen ? 6 : 10}
                   mt={{ base: 3, xl: 0 }}
@@ -156,25 +146,18 @@ export function Dashboard({
                     openDelay={500}
                   >
                     <VStack
-                      // alignItems={{ base: "flex-start", lg: "center" }}
                       alignItems="center"
                       space={3}
                       textAlign="center"
-                      // justifyContent="center"
-                      // flex={{ base: 1, xl: "none" }}
                       flex={1}
                     >
                       <Circle
-                        // @ts-ignore
-                        // size={{ base: 12, lg: 20 }}
                         size={12}
                         borderWidth={3}
                         borderColor="blueGray.200"
                       >
                         <Icon
                           as={<VectorIcons.AntDesign name="camerao" />}
-                          // @ts-ignore
-                          // size={{ base: 6, lg: 8 }}
                           size={6}
                           color="blueGray.500"
                         />
@@ -183,7 +166,6 @@ export function Dashboard({
                       <Text
                         color="coolGray.500"
                         fontWeight={600}
-                        // fontSize={{ base: "sm", lg: "md" }}
                         fontSize="xs"
                         // @ts-ignore
                         textAlign={{ base: "center", lg: "none" }}
@@ -199,21 +181,16 @@ export function Dashboard({
                     <VStack
                       alignItems="center"
                       space={3}
-                      // flex={{ base: 1, xl: "none" }}
                       flex={1}
                       textAlign="center"
                     >
                       <Circle
-                        // @ts-ignore
-                        // size={{ base: 12, lg: 16 }}
                         size={12}
                         borderWidth={3}
                         borderColor="blueGray.200"
                       >
                         <Icon
                           as={<VectorIcons.Ionicons name="swap-horizontal" />}
-                          // @ts-ignore
-                          // size={{ base: 6, lg: 8 }}
                           size={6}
                           color="blueGray.500"
                         />
@@ -222,7 +199,6 @@ export function Dashboard({
                       <Text
                         color="coolGray.500"
                         fontWeight={600}
-                        // fontSize={{ base: "sm", lg: "md" }}
                         fontSize="xs"
                         textAlign={{ base: "center", lg: "inherit" }}
                       >
@@ -234,21 +210,16 @@ export function Dashboard({
                     <VStack
                       alignItems="center"
                       space={3}
-                      // flex={{ base: 1, xl: "none" }}
                       flex={1}
                       textAlign="center"
                     >
                       <Circle
-                        // @ts-ignore
-                        // size={{ base: 12, lg: 16 }}
                         size={12}
                         borderWidth={3}
                         borderColor="blueGray.200"
                       >
                         <Icon
                           as={<VectorIcons.AntDesign name="plus" />}
-                          // @ts-ignore
-                          // size={{ base: 6, lg: 8 }}
                           size={6}
                           color="blueGray.500"
                         />
@@ -257,7 +228,6 @@ export function Dashboard({
                       <Text
                         color="coolGray.500"
                         fontWeight={600}
-                        // fontSize={{ base: "sm", lg: "md" }}
                         fontSize="xs"
                         textAlign={{ base: "center", lg: "inherit" }}
                       >
@@ -355,12 +325,10 @@ export function Dashboard({
                       space={4}
                       pt={6}
                     >
-                      {/* <VStack > */}
                       <Text
                         bold
                         color="coolGray.500"
                         mx={6}
-                        // fontSize={{ base: "md", lg: "lg" }}
                       >
                         Total sent
                       </Text>
@@ -369,13 +337,9 @@ export function Dashboard({
                         mx={6}
                         mb={4}
                         flexWrap="wrap"
-                        // borderBottomWidth={2}
-                        // borderBottomColor="red.200"
                       >
                         <Text
-                          // fontSize={{ base: "2xl", xl: "3xl" }}
                           fontSize="xl"
-                          // lineHeight={6}
                           mr={3}
                         >
                           $1,247.80
@@ -395,14 +359,12 @@ export function Dashboard({
                               //Todo:
                               // -3 as number is not working
                               // margin/layout-props not working
-
                               mr={8}
                             ></Icon>
                           </Box>
                           <Text
                             bold
                             color="green.700"
-                            // fontSize={{ base: "md", lg: "lg" }}
                           >
                             11%
                           </Text>
@@ -413,7 +375,6 @@ export function Dashboard({
                           <Text
                             fontWeight={600}
                             color="coolGray.600"
-                            // fontSize={{ base: "md", lg: "lg" }}
                           >
                             View all sent
                           </Text>
@@ -443,12 +404,10 @@ export function Dashboard({
                       space={4}
                       pt={6}
                     >
-                      {/* <VStack space={4} pt={6}> */}
                       <Text
                         bold
                         color="coolGray.500"
                         mx={6}
-                        // fontSize={{ base: "md", lg: "lg" }}
                       >
                         Received
                       </Text>
@@ -459,9 +418,7 @@ export function Dashboard({
                         flexWrap="wrap"
                       >
                         <Text
-                          // fontSize={{ base: "2xl", xl: "3xl" }}
                           fontSize="xl"
-                          // lineHeight={6}
                           mr={3}
                         >
                           $540.44
@@ -476,22 +433,16 @@ export function Dashboard({
                               as={
                                 <VectorIcons.Ionicons
                                   name="arrow-up-outline"
-                                  // style={{ marginBottom: "-3px" }}
                                 />
                               }
                               size="xs"
                               color="green.500"
-                              //Todo:
-                              // -3 as number is not working
-                              // margin/layout-props not working
-
                               mr={8}
                             ></Icon>
                           </Box>
                           <Text
                             bold
                             color="green.700"
-                            // fontSize={{ base: "md", lg: "lg" }}
                           >
                             5%
                           </Text>
@@ -503,7 +454,6 @@ export function Dashboard({
                           <Text
                             fontWeight={600}
                             color="coolGray.600"
-                            // fontSize={{ base: "md", lg: "lg" }}
                           >
                             View all received
                           </Text>
@@ -532,12 +482,10 @@ export function Dashboard({
                       pt={6}
                       space={4}
                     >
-                      {/* <VStack pt={6} space={4} flex={1}> */}
                       <Text
                         bold
                         color="coolGray.500"
                         mx={6}
-                        // fontSize={{ base: "md", lg: "lg" }}
                       >
                         Outstanding
                       </Text>
@@ -548,9 +496,7 @@ export function Dashboard({
                         flexWrap="wrap"
                       >
                         <Text
-                          // fontSize={{ base: "2xl", xl: "3xl" }}
                           fontSize="xl"
-                          // lineHeight={6}
                           mr={3}
                         >
                           $300.00
@@ -567,9 +513,6 @@ export function Dashboard({
                               }
                               size="xs"
                               color="red.600"
-                              //Todo:
-                              // -3 as number is not working
-                              // margin/layout-props not working
                               mb={3}
                               mr={8}
                             ></Icon>
@@ -577,19 +520,16 @@ export function Dashboard({
                           <Text
                             bold
                             color="orange.900"
-                            // fontSize={{ base: "md", lg: "lg" }}
                           >
                             8%
                           </Text>
                         </HStack>
                       </HStack>
-                      {/* </VStack> */}
                       <Center bg="blueGray.50" p={4}>
                         <HStack alignItems="center">
                           <Text
                             fontWeight={600}
                             color="coolGray.600"
-                            // fontSize={{ base: "md", lg: "lg" }}
                           >
                             View all outstanding
                           </Text>

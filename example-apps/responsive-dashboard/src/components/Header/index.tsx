@@ -49,12 +49,10 @@ export function Header(props: Proptype) {
           <HStack space={6}>
             <Box alignSelf="center">
               <IconButton
-                // mx={2}
                 icon={<SearchIcon size={5} color="blueGray.500" />}
                 colorScheme="coolGray"
                 _hover={{ bg: "transparent" }}
                 _pressed={{ bg: "transparent" }}
-                // border={0}
                 onPress={onOpen}
                 size={4}
               />
@@ -79,7 +77,6 @@ export function Header(props: Proptype) {
                       colorScheme="coolGray"
                       _pressed={{ bg: "transparent", borderColor: "white" }}
                       _hover={{ bg: "transparent" }}
-                      // mx={2}
                       size={6}
                     />
                   );

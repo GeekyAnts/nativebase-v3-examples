@@ -44,24 +44,23 @@ export function Setting({
         <LeftPanel navigation={navigation} />
         <ScrollView>
           <Box flex={1}>
-            <Box px={{ base: 6, lg: 16 }} bg="white">
+            <Box px={6} bg="white">
               <Header title="Settings" />
               <Divider bg="gray.100" size={2.5} rounded={5} />
               <VStack
                 space={12}
                 divider={<Divider />}
                 my={{ base: 7, lg: 12 }}
-                mx={{ base: 0, lg: 48 }}
+                mx={{ base: 0, lg: 'auto' }}
+
               >
                 <Stack
                   direction={isLargeScreen ? "row" : "column"}
-                  //@ts-ignore
-                  space={{ base: 5, lg: 0 }}
+                  space={5}
                 >
                   <Text
                     mb={5}
                     bold
-                    // fontSize={{ base: "lg", lg: "xl" }}
                     fontSize="lg"
                     flex={{ base: "none", lg: 1 }}
                   >
@@ -72,7 +71,6 @@ export function Setting({
                       <FormControl.Label>
                         <Text
                           bold
-                          // fontSize={{ base: "md", lg: "md" }}
                         >
                           Name
                         </Text>
@@ -83,7 +81,6 @@ export function Setting({
                       <FormControl.Label>
                         <Text
                           bold
-                          // fontSize={{ base: "md", lg: "lg" }}
                         >
                           Email
                         </Text>
@@ -94,7 +91,6 @@ export function Setting({
                       <FormControl.Label>
                         <Text
                           bold
-                          // fontSize={{ base: "md", lg: "lg" }}
                         >
                           Bio
                         </Text>
@@ -109,12 +105,10 @@ export function Setting({
                 </Stack>
                 <Stack
                   direction={isLargeScreen ? "row" : "column"}
-                  //@ts-ignore
-                  space={{ base: 5, lg: 0 }}
+                  space={5}
                 >
                   <Text
                     bold
-                    // fontSize={{ base: "lg", lg: "xl" }}
                     fontSize="lg"
                     flex={{ base: "none", lg: 1 }}
                   >
@@ -127,8 +121,6 @@ export function Setting({
                     flex={{ base: "none", lg: 2 }}
                   >
                     <Avatar
-                      //@ts-ignore
-                      // size={isLargeScreen ? "2xl" : "lg"}
                       size={isLargeScreen ? "xl" : "lg"}
                       source={{
                         uri: "https://avatars.githubusercontent.com/u/23293248",
@@ -143,7 +135,6 @@ export function Setting({
                           //@ts-ignore
                           variant="subtle"
                           size={isLargeScreen ? "sm" : "xs"}
-                          // _focus={{ shadowOutline: "blueGray" }}
                         >
                           Change Photo
                         </Button>
@@ -157,7 +148,6 @@ export function Setting({
                       </HStack>
 
                       <Text
-                        // fontSize={{ base: "sm", lg: "md" }}
                         fontSize="sm"
                         color="blueGray.500"
                         mt={2}
@@ -170,12 +160,10 @@ export function Setting({
 
                 <Stack
                   direction={isLargeScreen ? "row" : "column"}
-                  //@ts-ignore
-                  space={{ base: 5, lg: 0 }}
+                  space={5}
                 >
                   <Text
                     bold
-                    // fontSize={{ base: "lg", lg: "xl" }}
                     fontSize="lg"
                     flex={{ base: "none", lg: 1 }}
                   >
@@ -186,7 +174,6 @@ export function Setting({
                       <FormControl.Label>
                         <Text
                           bold
-                          // fontSize={{ base: "md", lg: "lg" }}
                         >
                           Display Language
                         </Text>
@@ -205,12 +192,7 @@ export function Setting({
                     </FormControl>
                     <FormControl>
                       <FormControl.Label>
-                        <Text
-                          bold
-                          // fontSize={{ base: "md", lg: "lg" }}
-                        >
-                          Display Currency
-                        </Text>
+                        <Text bold>Display Currency</Text>
                       </FormControl.Label>
                       <Select
                         selectedValue={currency}
@@ -229,12 +211,10 @@ export function Setting({
 
                 <Stack
                   direction={isLargeScreen ? "row" : "column"}
-                  //@ts-ignore
-                  space={{ base: 5, lg: 0 }}
+                  space={5}
                 >
                   <Text
                     bold
-                    // fontSize={{ base: "lg", lg: "xl" }}
                     fontSize="lg"
                     flex={{ base: "none", lg: 1 }}
                   >
@@ -244,7 +224,6 @@ export function Setting({
                     <Checkbox value="" colorScheme="blue">
                       <Text
                         ml={2}
-                        // fontSize={{ base: "md", lg: "lg" }}
                       >
                         Get updates about the latest meetups.
                       </Text>
@@ -252,7 +231,6 @@ export function Setting({
                     <Checkbox defaultIsChecked value="" colorScheme="blue">
                       <Text
                         ml={2}
-                        // fontSize={{ base: "md", lg: "lg" }}
                       >
                         Get notifications about your account activities
                       </Text>
@@ -261,12 +239,10 @@ export function Setting({
                 </Stack>
                 <Stack
                   direction={isLargeScreen ? "row" : "column"}
-                  //@ts-ignore
-                  space={{ base: 5, lg: 0 }}
+                  space={5}
                 >
                   <Text
                     bold
-                    // fontSize={{ base: "lg", lg: "xl" }}
                     fontSize="lg"
                     flex={{ base: "none", lg: 1 }}
                   >
@@ -282,7 +258,6 @@ export function Setting({
                       <VStack space={1}>
                         <Text
                           bold
-                          // fontSize={{ base: "md", lg: "lg" }}
                         >
                           Visa ending in 5555
                         </Text>
@@ -296,11 +271,7 @@ export function Setting({
                           colorScheme="coolGray"
                           py={3}
                           size={isLargeScreen ? "md" : "xs"}
-                          _text={{
-                            color: "black",
-                            // @ts-ignore
-                            // fontSize: `${isLargeScreen ? "lg" : "sm"}`,
-                          }}
+                          _text={{ color: "black" }}
                         >
                           Update
                         </Button>
