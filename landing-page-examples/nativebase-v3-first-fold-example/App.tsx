@@ -83,13 +83,10 @@ function HomeScreen() {
         <Stack space={[4, 4, 4]} p={[4, 4, 8]}>
           <Text color="gray.400">{d.toLocaleDateString('en-us',options)}</Text>
           <Heading size={["md", "lg", "md"]}>
-            The Stunning Dawki River in Meghalaya is So Clear That Boats Appear
-            Floating in Air
+          The stunning Dawki River in Meghalaya is so clear that boats appear to be floating in the air
           </Heading>
           <Text lineHeight={[5, 5, 7]} noOfLines={[4, 4, 2]}>
-            With lush green meadows, rivers clear as crystal, pine-covered
-            hills, gorgeous waterfalls, lakes and majestic forests, the
-            mesmerizing. Meghalaya is truly a Nature lover’s paradise…
+          With lush green meadows, rivers clear as crystal, pine-covered hills, gorgeous waterfalls, mesmerizing lakes and majestic forests,Meghalaya is truly a nature lover’s paradise… 
           </Text>
         </Stack>
         <HStack space={3} px={[4, 4, 8]} pb={[4, 4, 8]}>
