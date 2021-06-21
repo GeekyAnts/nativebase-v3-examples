@@ -17,7 +17,7 @@ export default function App() {
   const createItems = [
     {
       title: "Post",
-      caption: "Share a Post on news feed",
+      caption: "Share a post on your newsfeed",
       icon: <FontAwesome5 name="user-edit" size={18} color="black" />,
     },
     {
