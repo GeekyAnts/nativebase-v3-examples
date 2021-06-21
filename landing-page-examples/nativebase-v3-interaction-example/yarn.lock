@@ -2011,10 +2011,10 @@
     "@react-stately/radio" "^3.2.1"
     "@react-types/radio" "^3.1.1"
 
-"@react-native-aria/slider@^0.2.5-alpha.1":
-  version "0.2.5-alpha.1"
-  resolved "https://registry.yarnpkg.com/@react-native-aria/slider/-/slider-0.2.5-alpha.1.tgz#59d14bf19b662fe339ba17b567cb8d155e345cde"
-  integrity sha512-4xdWdBiMJlA8onSybb/Py48wAk7+6CoQViYxeM9rnXZCpk6ltBcwjSo9znKme8cjOMhutV0h+W0lTiB3kQlEAA==
+"@react-native-aria/slider@^0.2.5-alpha.0":
+  version "0.2.5-alpha.0"
+  resolved "https://registry.yarnpkg.com/@react-native-aria/slider/-/slider-0.2.5-alpha.0.tgz#1ee8918bd254bb73a16797f0e9042096adb40c09"
+  integrity sha512-+VGny075PUwI1n/RWDiTuymZW59/WQv6h8hB56Gsf7ga+Xd4ielCVr9yUEOrCN+0jxuc9F95YhsbvR4/Vr7XIw==
   dependencies:
     "@react-aria/focus" "^3.2.3"
     "@react-aria/label" "^3.1.1"
@@ -5472,10 +5472,10 @@ nanomatch@^1.2.9:
     snapdragon "^0.8.1"
     to-regex "^3.0.1"
 
-native-base@^3.0.0-next.40:
-  version "3.0.0-test.41-2"
-  resolved "https://registry.yarnpkg.com/native-base/-/native-base-3.0.0-test.41-2.tgz#80a397e66e44140e70b15dd1252a3dff412e8d63"
-  integrity sha512-/ncItVIymGh0BnFSD68ZPPKVXOlW/asAPetKcyEu0jVeBVQzkLUKsKlEWUxAz13hxE84xXFON+MSZ1EO8XmAoA==
+native-base@^3.0.0-next.37:
+  version "3.0.0-next.37"
+  resolved "https://registry.yarnpkg.com/native-base/-/native-base-3.0.0-next.37.tgz#f5ddd5a447831e600526341f61dce92f16725ca6"
+  integrity sha512-/hitPbpk+peWZcKajMmrOSykfvN/CyYMz8h5VkopxxXlRIMNTT7/cy37FLiFLgZ5/tgC75gosm8j7KMrNEBCOw==
   dependencies:
     "@react-aria/visually-hidden" "^3.2.1"
     "@react-native-aria/button" "^0.2.4"
@@ -5486,7 +5486,7 @@ native-base@^3.0.0-next.40:
     "@react-native-aria/listbox" "^0.2.4-alpha.0"
     "@react-native-aria/overlays" "^0.2.9"
     "@react-native-aria/radio" "^0.2.4"
-    "@react-native-aria/slider" "^0.2.5-alpha.1"
+    "@react-native-aria/slider" "^0.2.5-alpha.0"
     "@react-native-aria/tabs" "^0.2.7"
     "@react-native-aria/utils" "^0.2.7"
     "@react-stately/combobox" "^3.0.0-alpha.1"
