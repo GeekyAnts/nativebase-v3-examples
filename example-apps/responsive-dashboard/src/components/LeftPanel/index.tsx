@@ -126,12 +126,12 @@ export function LeftPanel({
           startIcon={
             <Icon
               as={<VectorIcons.FontAwesome name="balance-scale" />}
-              size="xs"
               mr={4}
               color={
                 route.name === "balances" ? "coolGray.200" : "coolGray.400"
               }
-              size="xs"
+              size="11px"
+              fontSize="11px"
             />
           }
           // py="18px"
@@ -324,7 +324,7 @@ export function LeftPanel({
                 startIcon={
                   <Icon
                     mr={2}
-                    size="md"
+                    size="23px"
                     color={
                       route.name === "balances"
                         ? "coolGray.200"
