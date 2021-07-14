@@ -40,6 +40,7 @@ export function Setting({
         /* @ts-ignore */
         direction={{ base: "column", md: "column", sm: "column", lg: "row" }}
         h="100%"
+        flex={1}
       >
         <LeftPanel navigation={navigation} />
         <ScrollView>
