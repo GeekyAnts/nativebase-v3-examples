@@ -2366,10 +2366,10 @@
     "@react-stately/radio" "^3.2.1"
     "@react-types/radio" "^3.1.1"
 
-"@react-native-aria/slider@^0.2.5-alpha.0":
-  version "0.2.5-alpha.0"
-  resolved "https://registry.yarnpkg.com/@react-native-aria/slider/-/slider-0.2.5-alpha.0.tgz#1ee8918bd254bb73a16797f0e9042096adb40c09"
-  integrity sha512-+VGny075PUwI1n/RWDiTuymZW59/WQv6h8hB56Gsf7ga+Xd4ielCVr9yUEOrCN+0jxuc9F95YhsbvR4/Vr7XIw==
+"@react-native-aria/slider@^0.2.5-alpha.1":
+  version "0.2.5-alpha.1"
+  resolved "https://registry.yarnpkg.com/@react-native-aria/slider/-/slider-0.2.5-alpha.1.tgz#59d14bf19b662fe339ba17b567cb8d155e345cde"
+  integrity sha512-4xdWdBiMJlA8onSybb/Py48wAk7+6CoQViYxeM9rnXZCpk6ltBcwjSo9znKme8cjOMhutV0h+W0lTiB3kQlEAA==
   dependencies:
     "@react-aria/focus" "^3.2.3"
     "@react-aria/label" "^3.1.1"
@@ -9267,6 +9267,7 @@ minipass-fetch@^1.3.0, minipass-fetch@^1.3.2:
   resolved "https://registry.yarnpkg.com/minipass-fetch/-/minipass-fetch-1.3.3.tgz#34c7cea038c817a8658461bf35174551dce17a0a"
   integrity sha512-akCrLDWfbdAWkMLBxJEeWTdNsjML+dt5YgOI4gJ53vuO0vrmYQkUPxa6j6V65s9CcePIr2SSWqjT2EcrNseryQ==
   dependencies:
+    encoding "^0.1.12"
     minipass "^3.1.0"
     minipass-sized "^1.0.3"
     minizlib "^2.0.0"
@@ -9466,10 +9467,10 @@ nanomatch@^1.2.9:
     snapdragon "^0.8.1"
     to-regex "^3.0.1"
 
-native-base@^3.0.0-next.40:
-  version "3.0.0-test.38-3"
-  resolved "https://registry.yarnpkg.com/native-base/-/native-base-3.0.0-test.38-3.tgz#3ca8ae17b4029fe3d784e27671bbdc54afb373e6"
-  integrity sha512-lCf/lblsjwh6JRJEdpp8Umxx0KMQfaNZQQ6N+jXTPAEJ9V2WEEV3WVWSrkilc++B8o7omw6f075/awpg4Fyr/g==
+native-base@3.0.7:
+  version "3.0.7"
+  resolved "https://registry.yarnpkg.com/native-base/-/native-base-3.0.7.tgz#21069be0b3c32e151f3e4b5183a05f33615159c6"
+  integrity sha512-Ee4FHAmy7mIkT3UjDGRKEC2neAPIBMZ3AI7F5WIJ7vFSNvuw2zs1OPV8aluuA2O/kRGY/3m1+Scs1GJFP/fwOw==
   dependencies:
     "@react-aria/visually-hidden" "^3.2.1"
     "@react-native-aria/button" "^0.2.4"
@@ -9480,7 +9481,7 @@ native-base@^3.0.0-next.40:
     "@react-native-aria/listbox" "^0.2.4-alpha.0"
     "@react-native-aria/overlays" "^0.2.9"
     "@react-native-aria/radio" "^0.2.4"
-    "@react-native-aria/slider" "^0.2.5-alpha.0"
+    "@react-native-aria/slider" "^0.2.5-alpha.1"
     "@react-native-aria/tabs" "^0.2.7"
     "@react-native-aria/utils" "^0.2.7"
     "@react-stately/combobox" "^3.0.0-alpha.1"

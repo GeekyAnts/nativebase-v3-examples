@@ -2408,10 +2408,10 @@ nanoid@^3.1.22:
   resolved "https://registry.yarnpkg.com/nanoid/-/nanoid-3.1.23.tgz#f744086ce7c2bc47ee0a8472574d5c78e4183a81"
   integrity sha512-FiB0kzdP0FFVGDKlRLEQ1BgDzU87dy5NnzjeW9YZNt+/c3+q82EQDUwniSAUxp/F0gFNI1ZhKU1FqYsMuqZVnw==
 
-native-base@^3.0.2:
-  version "3.0.3"
-  resolved "https://registry.yarnpkg.com/native-base/-/native-base-3.0.3.tgz#089250778919509dc1eb3d18d60ab282fbcda28b"
-  integrity sha512-hCPHDUynl223A2nbgMY3jJUcw/GElLvjnNFvyg0Pewa4cNlngbg2StjUmKiBdnEgmwGYyl2AtE3tUnFKAXjqJQ==
+native-base@3.0.7:
+  version "3.0.7"
+  resolved "https://registry.yarnpkg.com/native-base/-/native-base-3.0.7.tgz#21069be0b3c32e151f3e4b5183a05f33615159c6"
+  integrity sha512-Ee4FHAmy7mIkT3UjDGRKEC2neAPIBMZ3AI7F5WIJ7vFSNvuw2zs1OPV8aluuA2O/kRGY/3m1+Scs1GJFP/fwOw==
   dependencies:
     "@react-aria/visually-hidden" "^3.2.1"
     "@react-native-aria/button" "^0.2.4"
