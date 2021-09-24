@@ -23,12 +23,15 @@ function HomeScreen() {
   }, []);
 
   return (
-    <Center _web={{h:"100vh"}} bg={useColorModeValue("blueGray.50", "blueGray.800")}>
+    <Center
+      _web={{ h: "100vh" }}
+      bg={useColorModeValue("blueGray.50", "blueGray.800")}
+    >
       <Stack space={4}>
         <FormControl>
-          <Input placeholder="Chat Room ID" />
+          <Input variant="filled" placeholder="Chat Room ID" />
         </FormControl>
-        <Button colorScheme="green" endIcon={<ArrowForwardIcon size={6} />}>
+        <Button colorScheme="indigo" endIcon={<ArrowForwardIcon size={4} />}>
           Join In
         </Button>
       </Stack>
