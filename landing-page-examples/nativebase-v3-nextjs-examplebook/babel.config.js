@@ -1,4 +1,4 @@
 module.exports = {
-  presets: ['next/babel'],
-  plugins: [['react-native-web', { commonjs: true }]],
-}
+  presets: ["@expo/next-adapter/babel"],
+  plugins: [["@babel/plugin-proposal-class-properties"]],
+};

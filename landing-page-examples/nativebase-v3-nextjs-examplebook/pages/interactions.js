@@ -8,6 +8,7 @@ import {
   IconButton,
   HStack,
   Text,
+  Icon,
 } from "native-base";
 import Ionicons from "react-native-vector-icons/Ionicons";
 import MaterialIcons from "react-native-vector-icons/MaterialIcons";
@@ -43,7 +44,7 @@ export default function App() {
                 rounded="full"
                 height="12"
                 width="12"
-                icon={<AntDesign name="plus" size={24} color="white" />}
+                icon={<Icon as={AntDesign} name="plus" color="red.300" />}
                 {...triggerProps}
               />
             );

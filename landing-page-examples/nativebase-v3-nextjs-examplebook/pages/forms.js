@@ -11,12 +11,15 @@ import {
   Checkbox,
   Divider,
   AddIcon,
+  Icon,
 } from "native-base";
 import { formExampleTheme } from "../theme";
+import AntDesign from "react-native-vector-icons/AntDesign";
+
 export default function App() {
   return (
     <NativeBaseProvider theme={formExampleTheme}>
-      <Center _web={{h:"100vh"}} p={4}>
+      <Center _web={{ h: "100vh" }} p={4}>
         <Box alignItems="flex-end" p={8}>
           <VStack alignItems="flex-end" space={5}>
             <FormControl>
@@ -41,6 +44,7 @@ export default function App() {
               I agree to the Terms and conditions
             </Checkbox>
           </VStack>
+          <Icon as={<AntDesign name="Trophy" />} color="red.800" size="2xl" />
           <Button mt={2} endIcon={<AddIcon size={3} />}>
             Create Event
           </Button>
