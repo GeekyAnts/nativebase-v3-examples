@@ -7,9 +7,9 @@ export const customTheme = extendTheme({
   components: {
     Checkbox: {
       sizes: {
-        lg: { iconSize: 6, _text: { fontSize: "xl" } },
-        md: { iconSize: 5, _text: { fontSize: "lg" } },
-        sm: { iconSize: 3, _text: { fontSize: 14 } },
+        lg: { _icon: { size: 6 }, _text: { fontSize: "xl" } },
+        md: { _icon: { size: 5 }, _text: { fontSize: "lg" } },
+        sm: { _icon: { size: 3 }, _text: { fontSize: "sm" } },
       },
     },
   },
