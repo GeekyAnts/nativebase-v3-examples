@@ -45,7 +45,7 @@ function MoreIcon(props) {
 }
 
 function HomeScreen() {
-  const ratio = useBreakpointValue({ base: 16 / 9, md: 16 / 11 });
+  const ratio = useBreakpointValue({ base: 16 / 9, md: 16 / 7 });
 
   const { toggleColorMode } = useColorMode();
 
@@ -64,7 +64,7 @@ function HomeScreen() {
         shadow={2}
         overflow="hidden"
         rounded="lg"
-        w={{ base: 64, sm: 80, md: "md" }}
+        w={{ base: 56, sm: 80, md: "md" }}
         bg={useColorModeValue("white", "blueGray.600")}
       >
         <AspectRatio w="100%" ratio={ratio}>
