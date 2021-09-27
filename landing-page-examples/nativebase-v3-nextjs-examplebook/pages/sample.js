@@ -19,7 +19,7 @@ import { sampleExampleTheme } from "../theme";
 function MoreIcon(props) {
   return (
     <Icon
-      size={5}
+      size={4}
       data-name="Icon ionic-ios-arrow-dropright"
       xmlns="http://www.w3.org/2000/svg"
       width="25.8"
@@ -45,7 +45,7 @@ function MoreIcon(props) {
 }
 
 function HomeScreen() {
-  const ratio = useBreakpointValue({ base: 16 / 9, md: 16 / 7 });
+  const ratio = useBreakpointValue({ base: 16 / 9, md: 16 / 11 });
 
   const { toggleColorMode } = useColorMode();
 
@@ -64,30 +64,33 @@ function HomeScreen() {
         shadow={2}
         overflow="hidden"
         rounded="lg"
-        w={{ base: 56, sm: 80, md: "md" }}
+        w={{ base: 64, sm: 80, md: "md" }}
         bg={useColorModeValue("white", "blueGray.600")}
       >
         <AspectRatio w="100%" ratio={ratio}>
-          <Image source={{ uri: "/images/dawki-river.png" }} alt="image base" />
+          <Image
+            source={{ uri: "/images/bangalore-city.jpeg" }}
+            alt="image base"
+          />
         </AspectRatio>
         <Text bold position="absolute" color="white" top={0} m={[4, 4, 8]}>
           NEWS
         </Text>
-        <Stack space={[4, 4, 4]} p={[4, 4, 8]}>
-          <Text color="gray.400">{d.toLocaleDateString("en-us", options)}</Text>
-          <Heading size={["md", "lg", "md"]}>
-            The stunning Dawki River in Meghalaya is so clear that boats appear
-            to be floating in the air
+        <Stack space={[2, 2, 2]} p={[4, 4, 8]}>
+          <Text color="coolGray.600">
+            {d.toLocaleDateString("en-us", options)}
+          </Text>
+          <Heading size={["md", "lg", "md"]} fontWeight="medium">
+            The Garden City
           </Heading>
-          <Text lineHeight={[5, 5, 7]} noOfLines={[4, 4, 2]}>
-            With lush green meadows, rivers clear as crystal, pine-covered
-            hills, gorgeous waterfalls, mesmerizing lakes and majestic
-            forests,Meghalaya is truly a nature lover’s paradise…
+          <Text noOfLines={[4, 4, 2]} color="coolGray.600">
+            Bengaluru (also called Bangalore) is the center of India's high-tech
+            industry. The city is also known for its parks and nightlife.
           </Text>
         </Stack>
-        <HStack space={3} px={[4, 4, 8]} pb={[4, 4, 8]}>
-          <MoreIcon color={useColorModeValue("green.600", "green.400")} />
-          <Text color={useColorModeValue("green.800", "green.400")}>
+        <HStack space={2} px={[4, 4, 8]} pb={[4, 4, 4]} alignItems="center">
+          <MoreIcon color={useColorModeValue("emerald.800", "emerald.400")} />
+          <Text color={useColorModeValue("emerald.800", "emerald.400")}>
             Find out more
           </Text>
         </HStack>
