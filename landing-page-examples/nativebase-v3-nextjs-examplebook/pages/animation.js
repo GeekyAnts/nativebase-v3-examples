@@ -116,43 +116,43 @@ export const Example = () => {
           />
         </Stagger>
       </Box>
-      <HStack alignItems="center">
+      <Tooltip
+        placement="right"
+        offset={10}
+        isOpen={true}
+        hasArrow={true}
+        label="Click Me!"
+        openDelay={500}
+        bg="coolGray.200"
+        arrowSize={14}
+        rounded="xs"
+        _text={{
+          fontSize: 16,
+          fontWeight: "medium",
+          p: 1,
+          color: "coolGray.800",
+        }}
+      >
         <IconButton
           variant="solid"
           borderRadius="full"
           size="lg"
+          height="12"
+          width="12"
+          alignItems="center"
+          justifyContent="center"
           onPress={onToggle}
           bg="cyan.400"
           icon={
             <Icon
               as={MaterialCommunityIcons}
-              size="6"
               name="dots-horizontal"
               color="warmGray.50"
               _dark={{ color: "warmGray.50" }}
             />
           }
         />
-        <Tooltip
-          placement="right"
-          offset={8}
-          isOpen={true}
-          hasArrow={true}
-          label="Click Me!"
-          openDelay={500}
-          bg="blueGray.300"
-          arrowSize={16}
-          rounded="md"
-          _text={{
-            fontSize: 16,
-            bold: true,
-            p: 1,
-            color: "blueGray.600",
-          }}
-        >
-          <Box></Box>
-        </Tooltip>
-      </HStack>
+      </Tooltip>
     </Box>
   );
 };

@@ -10,7 +10,7 @@ import {
   Text,
   Icon,
 } from "native-base";
-import Ionicons from "react-native-vector-icons/Ionicons";
+import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 import MaterialIcons from "react-native-vector-icons/MaterialIcons";
 import AntDesign from "react-native-vector-icons/AntDesign";
 export default function App() {
@@ -18,12 +18,26 @@ export default function App() {
     {
       title: "Post",
       caption: "Share a post on your newsfeed",
-      icon: <MaterialIcons name="post-add" size={24} color="black" />,
+      icon: (
+        <Icon
+          as={MaterialIcons}
+          name="post-add"
+          size={5}
+          color="coolGray.500"
+        />
+      ),
     },
     {
       title: "Room",
       caption: "Video chat with anyone",
-      icon: <Ionicons name="videocam" size={18} color="black" />,
+      icon: (
+        <Icon
+          as={MaterialCommunityIcons}
+          name="video-outline"
+          size={5}
+          color="coolGray.500"
+        />
+      ),
     },
   ];
 
@@ -62,16 +76,22 @@ export default function App() {
                   key={idx}
                 >
                   <HStack space={4} alignItems="center">
-                    <Circle rounded="full" bg="gray.200">
-                      <Circle size={10} bg="gray.200">
+                    <Circle rounded="full" bg="coolGray.100">
+                      <Circle size={10} bg="coolGray.100">
                         {item.icon}
                       </Circle>
                     </Circle>
                     <VStack space={1}>
-                      <Text fontSize="sm" fontWeight="bold">
+                      <Text
+                        fontSize="sm"
+                        fontWeight="bold"
+                        color="coolGray.600"
+                      >
                         {item.title}
                       </Text>
-                      <Text fontSize="xs">{item.caption}</Text>
+                      <Text fontSize="xs" color="coolGray.600">
+                        {item.caption}
+                      </Text>
                     </VStack>
                   </HStack>
                 </Menu.Item>
