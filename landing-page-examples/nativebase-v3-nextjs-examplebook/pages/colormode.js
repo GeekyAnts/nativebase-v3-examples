@@ -41,7 +41,7 @@ function HomeScreen() {
 
 export default function App() {
   return (
-    <NativeBaseProvider>
+    <NativeBaseProvider isSSR>
       <HomeScreen />
     </NativeBaseProvider>
   );

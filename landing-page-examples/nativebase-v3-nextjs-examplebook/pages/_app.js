@@ -8,7 +8,7 @@ function App({ Component, pageProps }) {
     },
   });
   return (
-    <NativeBaseProvider theme={theme}>
+    <NativeBaseProvider theme={theme} isSSR>
       <Component {...pageProps} />
     </NativeBaseProvider>
   );

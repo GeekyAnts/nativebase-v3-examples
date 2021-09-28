@@ -3,9 +3,9 @@ import { extendTheme } from "native-base";
 
 export const sampleExampleTheme = extendTheme({
   breakpoints: {
-    sm:275,
-    md:330,
-    lg:400,
+    sm: 275,
+    md: 330,
+    lg: 400,
   },
 });
 

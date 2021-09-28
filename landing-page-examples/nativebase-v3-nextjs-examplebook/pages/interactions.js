@@ -42,7 +42,7 @@ export default function App() {
   ];
 
   return (
-    <NativeBaseProvider>
+    <NativeBaseProvider isSSR>
       <Center _web={{ h: "100vh" }} bg="white">
         <Menu
           placement="bottom"

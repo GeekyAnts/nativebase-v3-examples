@@ -1,4 +1,4 @@
-import React, { useEffect, useCallback, useState } from "react";
+import React, { useEffect } from "react";
 import {
   Heading,
   HStack,
@@ -6,16 +6,14 @@ import {
   Text,
   Center,
   Stack,
-  AspectRatio,
   NativeBaseProvider,
   useColorMode,
   Box,
   Image,
-  useColorModeValue,
   useBreakpointValue,
+  useColorModeValue,
 } from "native-base";
 import { sampleExampleTheme } from "../theme";
-
 function MoreIcon(props) {
   return (
     <Icon
@@ -45,10 +43,8 @@ function MoreIcon(props) {
 }
 
 function HomeScreen() {
-  const ratio = useBreakpointValue({ base: 16 / 9, md: 16 / 7 });
-
+  // const ratio = useBreakpointValue({ base: 16 / 10, md: 16 / 9 });
   const { toggleColorMode } = useColorMode();
-
   useEffect(() => {
     const searchParams = new URLSearchParams(window.location.search);
     const mode = searchParams.get("mode");
@@ -59,49 +55,73 @@ function HomeScreen() {
   const options = { month: "long", year: "numeric", day: "numeric" };
   const d = new Date();
   return (
-    <Center _web={{ h: "100vh" }} bg={"transparent"}>
-      <Box
-        shadow={2}
-        overflow="hidden"
-        rounded="lg"
-        w={{ base: 56, sm: 80, md: "md" }}
-        bg={useColorModeValue("white", "blueGray.600")}
-      >
-        <AspectRatio w="100%" ratio={ratio}>
+    <>
+      <Center _web={{ h: "100vh" }} bg={"transparent"}>
+        <Box
+          shadow={2}
+          overflow="hidden"
+          rounded="lg"
+          w={["64", "80", "md"]}
+          _light={{ bg: "coolGray.50" }}
+          _dark={{ bg: "gray.700" }}
+        >
           <Image
-            source={{ uri: "/images/bangalore-city.jpeg" }}
+            w={["64", "80", "md"]}
+            h={["215", "220", "215"]}
+            source={{ uri: "/images/dawki-river.png" }}
             alt="image base"
           />
-        </AspectRatio>
-        <Text bold position="absolute" color="white" top={0} m={[4, 4, 8]}>
-          NEWS
-        </Text>
-        <Stack space={[2, 2, 2]} p={[4, 4, 8]}>
-          <Text color="coolGray.600">
-            {d.toLocaleDateString("en-us", options)}
+
+          <Text
+            fontWeight="medium"
+            position="absolute"
+            color="coolGray.50"
+            top={0}
+            m={[4, 4, 4]}
+          >
+            NEWS
           </Text>
-          <Heading size={["md", "lg", "md"]} fontWeight="medium">
-            The Garden City
-          </Heading>
-          <Text noOfLines={[4, 4, 2]} color="coolGray.600">
-            Bengaluru (also called Bangalore) is the center of India's high-tech
-            industry. The city is also known for its parks and nightlife.
-          </Text>
-        </Stack>
-        <HStack space={2} px={[4, 4, 8]} pb={[4, 4, 4]} alignItems="center">
-          <MoreIcon color={useColorModeValue("emerald.800", "emerald.400")} />
-          <Text color={useColorModeValue("emerald.800", "emerald.400")}>
-            Find out more
-          </Text>
-        </HStack>
-      </Box>
-    </Center>
+          <Stack space={[2, 2, 2]} p={[4, 4, 4]}>
+            <Text
+              _light={{ color: "coolGray.600" }}
+              _dark={{ color: "warmGray.200" }}
+            >
+              {d.toLocaleDateString("en-us", options)}
+            </Text>
+            <Heading size={["md", "lg", "md"]} fontWeight="medium">
+              The Garden City
+            </Heading>
+            <Text
+              isTruncated
+              noOfLines={useBreakpointValue("4", "4", "4")}
+              _light={{ color: "coolGray.600" }}
+              _dark={{ color: "warmGray.200" }}
+            >
+              Bengaluru (also called Bangalore) is the center of India's
+              high-tech industry. It is located in southern India on the Deccan
+              Plateau.The city is also known for its parks and nightlife.
+              Bangalore is the major center of India's IT industry, popularly
+              known as the Silicon Valley of India.
+            </Text>
+          </Stack>
+          <HStack space={2} px={[4, 4, 4]} pb={[4, 4, 4]} alignItems="center">
+            <MoreIcon color={useColorModeValue("emerald.800", "emerald.300")} />
+            <Text
+              _light={{ color: "emerald.800" }}
+              _dark={{ color: "emerald.300" }}
+            >
+              Find out more
+            </Text>
+          </HStack>
+        </Box>
+      </Center>
+    </>
   );
 }
 
 export default function App() {
   return (
-    <NativeBaseProvider theme={sampleExampleTheme}>
+    <NativeBaseProvider theme={sampleExampleTheme} isSSR>
       <HomeScreen />
     </NativeBaseProvider>
   );

@@ -159,7 +159,7 @@ export const Example = () => {
 
 export default function App() {
   return (
-    <NativeBaseProvider>
+    <NativeBaseProvider isSSR>
       <Center _web={{ h: "100vh" }} d="flex">
         <Example />
       </Center>

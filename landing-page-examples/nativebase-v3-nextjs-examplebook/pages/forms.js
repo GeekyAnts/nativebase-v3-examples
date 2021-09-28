@@ -17,7 +17,7 @@ import { formExampleTheme } from "../theme";
 
 export default function App() {
   return (
-    <NativeBaseProvider theme={formExampleTheme}>
+    <NativeBaseProvider theme={formExampleTheme} isSSR>
       <Center _web={{ h: "100vh" }} p={4}>
         <Box alignItems="flex-end" p={8}>
           <VStack alignItems="flex-end" space={4}>
@@ -43,7 +43,7 @@ export default function App() {
               I agree to the Terms and conditions
             </Checkbox>
           </VStack>
-          <Button mt={2} endIcon={<AddIcon size={3} />}>
+          <Button mt={2} size="sm" endIcon={<AddIcon size={3} />}>
             Create Event
           </Button>
         </Box>
