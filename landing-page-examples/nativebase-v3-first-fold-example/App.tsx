@@ -85,7 +85,7 @@ function HomeScreen() {
           <Heading size={["md", "lg", "md"]}>
           The stunning Dawki River in Meghalaya is so clear that boats appear to be floating in the air
           </Heading>
-          <Text lineHeight={[5, 5, 7]} noOfLines={[4, 4, 2]}>
+          <Text lineHeight={[20, 20, 24]} noOfLines={[4, 4, 2]}>
           With lush green meadows, rivers clear as crystal, pine-covered hills, gorgeous waterfalls, mesmerizing lakes and majestic forests,Meghalaya is truly a nature lover’s paradise… 
           </Text>
         </Stack>
