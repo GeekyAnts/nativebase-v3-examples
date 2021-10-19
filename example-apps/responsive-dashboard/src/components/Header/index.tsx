@@ -16,7 +16,7 @@ import {
   useDisclose,
   useBreakpointValue,
   Box,
-} from "nb-beavr";
+} from "native-base";
 import { ScrollView } from "react-native";
 import { Feather } from "@expo/vector-icons";
 

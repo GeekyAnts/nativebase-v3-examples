@@ -11,7 +11,7 @@ import {
   List,
   Text,
   Button,
-} from "nb-beavr";
+} from "native-base";
 import { Ionicons } from "@expo/vector-icons";
 import { ScrollView } from "react-native";
 import type { StackNavigationProp } from "@react-navigation/stack";

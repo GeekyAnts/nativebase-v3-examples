@@ -14,7 +14,7 @@ import {
   Checkbox,
   useBreakpointValue,
   Stack,
-} from "nb-beavr";
+} from "native-base";
 import { ScrollView } from "react-native";
 import { LeftPanel } from "../components";
 import type { StackNavigationProp } from "@react-navigation/stack";

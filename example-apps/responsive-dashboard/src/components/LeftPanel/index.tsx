@@ -14,7 +14,7 @@ import {
   useBreakpointValue,
   SearchIcon,
   Fab,
-} from "nb-beavr";
+} from "native-base";
 import { Logo } from "../../Icons/Logo";
 import * as VectorIcons from "@expo/vector-icons";
 import { useRoute } from "@react-navigation/native";

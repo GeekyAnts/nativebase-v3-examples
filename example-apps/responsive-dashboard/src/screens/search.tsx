@@ -10,7 +10,7 @@ import {
   Text,
   VStack,
   Alert,
-} from "nb-beavr";
+} from "native-base";
 import type { StackNavigationProp } from "@react-navigation/stack";
 import { Ionicons } from "@expo/vector-icons";
 
