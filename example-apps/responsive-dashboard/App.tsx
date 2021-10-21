@@ -5,7 +5,6 @@ import { NativeBaseProvider, Box } from "native-base";
 import { NavigationContainer } from "@react-navigation/native";
 import { DashboardStack } from "./src/navigators";
 import { DashboardTheme } from "./src/theme";
-import Head from 'next/head'
 
 
 export default function App() {
