@@ -1,25 +1,121 @@
 import React from "react";
 import {
   Box,
-  HStack,
-  Heading,
-  Text,
   Icon,
   VStack,
   Button,
-  Divider,
-  IconButton,
   useDisclose,
   Actionsheet,
-  useBreakpointValue,
-  SearchIcon,
   Fab,
-} from "nb-beavr";
-import { Logo } from "../../Icons/Logo";
-import * as VectorIcons from "@expo/vector-icons";
+  Hidden,
+  Avatar,
+  Text,
+  Divider,
+} from "native-base";
 import { useRoute } from "@react-navigation/native";
 import { ScrollView } from "react-native";
 import type { StackNavigationProp } from "@react-navigation/stack";
+import {
+  AntDesign,
+  Foundation,
+  MaterialCommunityIcons,
+  SimpleLineIcons,
+} from "@expo/vector-icons";
+
+const sidebarItems = [
+  {
+    title: "Dashboard",
+    routeName: "dashboard",
+    iconName: "dashboard",
+    iconLibrary: AntDesign,
+  },
+  {
+    title: "Recipients",
+    iconName: "user",
+    iconLibrary: AntDesign,
+  },
+  {
+    title: "Invoices",
+    iconName: "graph-trend",
+    iconLibrary: Foundation,
+  },
+  {
+    title: "Reports",
+    iconName: "comment-text-outline",
+    iconLibrary: MaterialCommunityIcons,
+  },
+];
+const helpItems = [
+  {
+    title: "Settings",
+    routeName: "setting",
+    iconName: "settings",
+    iconLibrary: SimpleLineIcons,
+  },
+  {
+    title: "Help",
+    routeName: "help",
+    iconName: "help-circle-outline",
+    iconLibrary: MaterialCommunityIcons,
+  },
+];
+function LeftPanelItemButton(props: any) {
+  return (
+    <Button
+      key={props.index}
+      py="3"
+      _hover={{ bg: "indigo.700" }}
+      _pressed={{ bg: "indigo.800" }}
+      _text={{ color: "warmGray.50", fontSize: "sm" }}
+      _focus={{ bg: "indigo.800" }}
+      startIcon={
+        <Icon
+          as={props.item.iconLibrary}
+          name={props.item.iconName}
+          mr={4}
+          color="warmGray.50"
+          size="5"
+        />
+      }
+      justifyContent="flex-start"
+      bg={props.route.name === props.item.routeName ? "indigo.700" : ""}
+      onPress={() =>
+        props.item.routeName && props.navigation.navigate(props.item.routeName)
+      }
+    >
+      {props.item.title}
+    </Button>
+  );
+}
+
+function MobileActionSheetItem(props: any) {
+  return (
+    <Actionsheet.Item
+      key={props.index}
+      py="3"
+      _hover={{ bg: "indigo.700" }}
+      _pressed={{ bg: "indigo.800" }}
+      _text={{ color: "warmGray.50", fontSize: "sm" }}
+      _focus={{ bg: "indigo.800" }}
+      startIcon={
+        <Icon
+          as={props.item.iconLibrary}
+          name={props.item.iconName}
+          mr="1"
+          color="warmGray.50"
+          size="5"
+        />
+      }
+      justifyContent="flex-start"
+      bg={props.route.name === props.item.routeName ? "indigo.700" : ""}
+      onPress={() =>
+        props.item.routeName && props.navigation.navigate(props.item.routeName)
+      }
+    >
+      {props.item.title}
+    </Actionsheet.Item>
+  );
+}
 
 export function LeftPanel({
   navigation,
@@ -27,413 +123,133 @@ export function LeftPanel({
   navigation: StackNavigationProp<any>;
 }) {
   const route = useRoute();
-  const activeRouteProps = {
-    bg: "slateGray.700",
-  };
-  const isWeb = useBreakpointValue({
-    base: false,
-    sm: false,
-    md: false,
-    lg: true,
-  });
-  // use to control actionsheet modal
+
   const { isOpen, onOpen, onClose } = useDisclose();
 
-  return isWeb ? (
-    <Box w={64} nativeID="1234" h="100%" bg="slateGray.600" overflow="hidden">
-      <HStack alignItems="center" space="xs" ml={7} my={3}>
-        <Logo size="lg" />
-        <Heading fontSize="lg" color="white">
-          NativeBase
-        </Heading>
-      </HStack>
-      {/* <VStack px={8} space="xs" my={3}>
-        <Logo size="xl" />
-        <Heading fontSize="xl" color="white">
-          NativeBase
-        </Heading>
-      </VStack> */}
-      <VStack px={8} py={4} bg="slateGray.700" space={2}>
-        <Text color="coolGray.400" fontWeight={500}>
-          Your Balance
-        </Text>
-        <Text color="coolGray.200" fontSize="xl">
-          $2,550.40
-        </Text>
-        <Button
-          pl={0}
-          p={0}
-          variant="unstyled"
-          justifyContent="flex-start"
-          _text={{
-            color: "coolGray.400",
-            fontWeight: 500,
-          }}
-          endIcon={
-            <Icon
-              size="md"
-              color="coolGray.200"
-              as={<VectorIcons.MaterialCommunityIcons name="chevron-right" />}
-            />
-          }
-        >
-          View summary
-        </Button>
-      </VStack>
-      <Button.Group direction="column" variant="unstyled" p={4}>
-        <Button
-          _hover={{ bg: "slateGray.700" }}
-          _text={{ color: "coolGray.200", fontSize: "sm" }}
-          startIcon={
-            <Icon
-              as={<VectorIcons.AntDesign name="home" />}
-              mr={4}
-              color={
-                route.name === "dashboard" ? "coolGray.200" : "coolGray.400"
-              }
-              size="xs"
-            />
-          }
-          justifyContent="flex-start"
-          _pressed={{ bg: "coolGray.800" }}
-          {...(route.name === "dashboard" && activeRouteProps)}
-          onPress={() => navigation.navigate("dashboard")}
-        >
-          Dashboard
-        </Button>
-        <Button
-          _hover={{ bg: "slateGray.700" }}
-          _text={{ color: "coolGray.200", fontSize: "sm" }}
-          startIcon={
-            <Icon
-              as={<VectorIcons.Entypo name="text-document" />}
-              mr={4}
-              color={
-                route.name === "invoices" ? "coolGray.200" : "coolGray.400"
-              }
-              size="xs"
-            />
-          }
-          justifyContent="flex-start"
-          _pressed={{ bg: "coolGray.800" }}
-          {...(route.name === "invoices" && activeRouteProps)}
-        >
-          Invoices
-        </Button>
-        <Button
-          _hover={{ bg: "slateGray.700" }}
-          _text={{ color: "coolGray.200", fontSize: "sm" }}
-          startIcon={
-            <Icon
-              as={<VectorIcons.FontAwesome name="balance-scale" />}
-              size="xs"
-              mr={4}
-              color={
-                route.name === "balances" ? "coolGray.200" : "coolGray.400"
-              }
-              size="xs"
-            />
-          }
-          // py="18px"
-          justifyContent="flex-start"
-          _pressed={{ bg: "coolGray.800" }}
-          {...(route.name === "balances" && activeRouteProps)}
-        >
-          Balances
-        </Button>
-        <Button
-          _hover={{ bg: "slateGray.700" }}
-          _text={{ color: "coolGray.200", fontSize: "sm" }}
-          startIcon={
-            <Icon
-              as={<VectorIcons.Ionicons name="person-circle-outline" />}
-              mr={4}
-              color={
-                route.name === "recipients" ? "coolGray.200" : "coolGray.400"
-              }
-              size="xs"
-            />
-          }
-          justifyContent="flex-start"
-          _pressed={{ bg: "coolGray.800" }}
-          {...(route.name === "recipients" && activeRouteProps)}
-        >
-          Recipients
-        </Button>
-        <Button
-          _hover={{ bg: "slateGray.700" }}
-          _text={{ color: "coolGray.200", fontSize: "sm" }}
-          startIcon={
-            <Icon
-              as={
-                <VectorIcons.MaterialCommunityIcons name="file-chart-outline" />
-              }
-              mr={4}
-              color={route.name === "reports" ? "coolGray.200" : "coolGray.400"}
-              size="xs"
-            />
-          }
-          justifyContent="flex-start"
-          _pressed={{ bg: "coolGray.800" }}
-          {...(route.name === "reports" && activeRouteProps)}
-        >
-          Reports
-        </Button>
-      </Button.Group>
-      <Divider bg="slateGray.700" size={3} />
-      <Button.Group direction="column" variant="unstyled" p={4}>
-        <Button
-          _hover={{ bg: "slateGray.700" }}
-          _text={{ color: "coolGray.200", fontSize: "sm" }}
-          startIcon={
-            <Icon
-              as={<VectorIcons.Ionicons name="settings-outline" />}
-              mr={4}
-              color={route.name === "setting" ? "coolGray.200" : "coolGray.400"}
-              size="xs"
-            />
-          }
-          justifyContent="flex-start"
-          _pressed={{ bg: "coolGray.800" }}
-          {...(route.name === "setting" && activeRouteProps)}
-          onPress={() => navigation.navigate("setting")}
-        >
-          Settings
-        </Button>
-        <Button
-          _hover={{ bg: "slateGray.700" }}
-          _text={{ color: "coolGray.200", fontSize: "sm" }}
-          startIcon={
-            <Icon
-              as={<VectorIcons.Feather name="help-circle" />}
-              mr={4}
-              color={route.name === "help" ? "coolGray.200" : "coolGray.400"}
-              size="xs"
-            />
-          }
-          justifyContent="flex-start"
-          _pressed={{ bg: "coolGray.800" }}
-          {...(route.name === "help" && activeRouteProps)}
-        >
-          Help
-        </Button>
-      </Button.Group>
-    </Box>
-  ) : (
+  return (
     <>
-      <Fab
-        colorScheme="coolGray"
-        icon={
-          <Icon
-            color="coolGray.200"
-            as={<VectorIcons.MaterialCommunityIcons name="menu" />}
-            size="sm"
-          />
-        }
-        onPress={onOpen}
-        p={3}
-        _web={{ position: "fixed" }}
-      />
-      <Box
-        w="100%"
-        py={4}
-        bg="coolGray.600"
-        overflow="hidden"
-        justifyContent="center"
-      >
-        <HStack alignItems="center" mx={2} space={3}>
-          <HStack alignItems="center" space="sm" ml={2}>
-            <Logo size={12} />
-            <Heading color="white" size="sm">
-              NativeBase
-            </Heading>
-          </HStack>
-
-          <IconButton
-            ml="auto"
-            icon={<SearchIcon size="sm" color="blueGray.400" />}
-            colorScheme="blueGray"
-            _pressed={{ bg: "transparent" }}
-            p={0}
-            onPress={() => navigation.navigate("search")}
-          />
-          <IconButton
+      <Hidden till="md">
+        <Box w={64} bg="indigo.500" overflow="hidden">
+          <VStack justifyContent="center" mx="auto" mt="8" mb="4" space="2">
+            <Avatar
+              alignSelf="center"
+              size="20"
+              source={{
+                uri:
+                  "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80",
+              }}
+            >
+              JW
+            </Avatar>
+            <VStack>
+              <Text
+                bold
+                fontSize="md"
+                color="warmGray.50"
+                textAlign="center"
+                fontWeight="medium"
+              >
+                Jessica Willis
+              </Text>
+              <Text textAlign="center" color="warmGray.50" fontSize="xs">
+                jessicawillis@gmail.com
+              </Text>
+            </VStack>
+          </VStack>
+          <Divider opacity="0.2" />
+          <ScrollView showsHorizontalScrollIndicator={false}>
+            <VStack>
+              <Button.Group
+                direction="column"
+                variant="unstyled"
+                p={3}
+                space="20"
+              >
+                <VStack space="3">
+                  {sidebarItems.map((item, index) => {
+                    return (
+                      <LeftPanelItemButton
+                        item={item}
+                        key={index}
+                        route={route}
+                        navigation={navigation}
+                      />
+                    );
+                  })}
+                </VStack>
+                <VStack space="3">
+                  {helpItems.map((item, index) => {
+                    return (
+                      <LeftPanelItemButton
+                        item={item}
+                        key={index}
+                        route={route}
+                        navigation={navigation}
+                      />
+                    );
+                  })}
+                </VStack>
+              </Button.Group>
+            </VStack>
+          </ScrollView>
+        </Box>
+      </Hidden>
+      <Hidden from="md">
+        <>
+          <Fab
             icon={
               <Icon
-                as={<VectorIcons.Feather name="bell" />}
-                color="blueGray.400"
+                color="coolGray.200"
+                as={MaterialCommunityIcons}
+                name="menu"
                 size="sm"
               />
             }
-            _pressed={{ bg: "transparent" }}
-            colorScheme="coolGray"
-            onPress={() => navigation.navigate("notifications")}
+            onPress={onOpen}
+            p={3}
+            _web={{ position: "fixed" }}
           />
-        </HStack>
-      </Box>
-      <Actionsheet isOpen={isOpen} onClose={onClose} my={0}>
-        <Actionsheet.Content bg="coolGray.600" my={0} alignItems="flex-end">
-          <ScrollView style={{ width: "100%" }}>
-            <VStack space={2}>
-              {/*
-               */}
-              <Actionsheet.Item
-                _text={{ color: "coolGray.200", fontSize: "md" }}
-                startIcon={
-                  <Icon
-                    mr={2}
-                    size="md"
-                    color={
-                      route.name === "dashboard"
-                        ? "coolGray.200"
-                        : "coolGray.400"
-                    }
-                    as={<VectorIcons.AntDesign name="home" />}
-                  />
-                }
-                _pressed={{ bg: "coolGray.800" }}
-                {...(route.name === "dashboard" && activeRouteProps)}
-                onPress={() => {
-                  navigation.navigate("dashboard");
-                  onClose();
-                }}
-              >
-                Dashboard
-              </Actionsheet.Item>
-              <Actionsheet.Item
-                _text={{ color: "coolGray.200", fontSize: "md" }}
-                startIcon={
-                  <Icon
-                    mr={2}
-                    size="md"
-                    color={
-                      route.name === "invoices"
-                        ? "coolGray.200"
-                        : "coolGray.400"
-                    }
-                    as={<VectorIcons.Entypo name="text-document" />}
-                  />
-                }
-                _pressed={{ bg: "coolGray.800" }}
-                {...(route.name === "invoices" && activeRouteProps)}
-              >
-                Invoices
-              </Actionsheet.Item>
-              <Actionsheet.Item
-                _text={{ color: "coolGray.200", fontSize: "md" }}
-                startIcon={
-                  <Icon
-                    mr={2}
-                    size="md"
-                    color={
-                      route.name === "balances"
-                        ? "coolGray.200"
-                        : "coolGray.400"
-                    }
-                    as={<VectorIcons.FontAwesome name="balance-scale" />}
-                  />
-                }
-                _pressed={{ bg: "coolGray.800" }}
-                {...(route.name === "balances" && activeRouteProps)}
-              >
-                Balances
-              </Actionsheet.Item>
-              <Actionsheet.Item
-                _text={{ color: "coolGray.200", fontSize: "md" }}
-                startIcon={
-                  <Icon
-                    mr={2}
-                    size="md"
-                    color={
-                      route.name === "recipients"
-                        ? "coolGray.200"
-                        : "coolGray.400"
-                    }
-                    as={<VectorIcons.Ionicons name="person-circle-outline" />}
-                  />
-                }
-                _pressed={{ bg: "coolGray.800" }}
-                {...(route.name === "recipients" && activeRouteProps)}
-              >
-                Recipients
-              </Actionsheet.Item>
-              <Actionsheet.Item
-                _text={{ color: "coolGray.200", fontSize: "md" }}
-                startIcon={
-                  <Icon
-                    mr={2}
-                    size="md"
-                    color={
-                      route.name === "reports" ? "coolGray.200" : "coolGray.400"
-                    }
-                    as={
-                      <VectorIcons.MaterialCommunityIcons name="file-chart-outline" />
-                    }
-                  />
-                }
-                _pressed={{ bg: "coolGray.800" }}
-                {...(route.name === "reports" && activeRouteProps)}
-              >
-                Reports
-              </Actionsheet.Item>
-              <Actionsheet.Item
-                _text={{ color: "coolGray.200", fontSize: "md" }}
-                startIcon={
-                  <Icon
-                    mr={2}
-                    size="md"
-                    color={
-                      route.name === "setting" ? "coolGray.200" : "coolGray.400"
-                    }
-                    as={<VectorIcons.Ionicons name="settings-outline" />}
-                  />
-                }
-                _pressed={{ bg: "coolGray.800" }}
-                {...(route.name === "setting" && activeRouteProps)}
-                onPress={() => {
-                  navigation.navigate("setting");
-                  onClose();
-                }}
-              >
-                Settings
-              </Actionsheet.Item>
-              <Actionsheet.Item
-                _text={{ color: "coolGray.200", fontSize: "md" }}
-                startIcon={
-                  <Icon
-                    mr={2}
-                    size="md"
-                    color={
-                      route.name === "help" ? "coolGray.200" : "coolGray.400"
-                    }
-                    as={<VectorIcons.Feather name="help-circle" />}
-                  />
-                }
-                _pressed={{ bg: "coolGray.800" }}
-                {...(route.name === "help" && activeRouteProps)}
-              >
-                Help
-              </Actionsheet.Item>
-              <Actionsheet.Item
-                _text={{ color: "coolGray.200", fontSize: "md" }}
-                startIcon={
-                  <Icon
-                    mr={2}
-                    size="md"
-                    color={
-                      route.name === "help" ? "coolGray.200" : "coolGray.400"
-                    }
-                    as={<VectorIcons.MaterialIcons name="logout" />}
-                  />
-                }
-                _pressed={{ bg: "coolGray.800" }}
-              >
-                Log out
-              </Actionsheet.Item>
-            </VStack>
-          </ScrollView>
-        </Actionsheet.Content>
-      </Actionsheet>
+
+          <Actionsheet
+            isOpen={isOpen}
+            onClose={onClose}
+            hideDragIndicator
+            rounded="0"
+          >
+            <Actionsheet.Content
+              bg="indigo.500"
+              alignItems="flex-end"
+              roundedTop="8"
+              py="0"
+            >
+              <ScrollView style={{ width: "100%" }}>
+                <VStack space="2" my="5">
+                  {sidebarItems.map((item, index) => {
+                    return (
+                      <MobileActionSheetItem
+                        item={item}
+                        key={index}
+                        route={route}
+                        navigation={navigation}
+                      />
+                    );
+                  })}
+                  {helpItems.map((item, index) => {
+                    return (
+                      <MobileActionSheetItem
+                        item={item}
+                        key={index}
+                        route={route}
+                        navigation={navigation}
+                      />
+                    );
+                  })}
+                </VStack>
+              </ScrollView>
+            </Actionsheet.Content>
+          </Actionsheet>
+        </>
+      </Hidden>
     </>
   );
 }

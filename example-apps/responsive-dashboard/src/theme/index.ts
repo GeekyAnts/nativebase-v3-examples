@@ -1,4 +1,4 @@
-import { extendTheme } from "nb-beavr";
+import { theme, extendTheme } from "native-base";
 
 export const DashboardTheme = extendTheme({
   components: {
@@ -11,30 +11,10 @@ export const DashboardTheme = extendTheme({
           };
         },
       },
-      
-    },
-    Text: {
-      defaultProps: {
-        fontSize: "sm",
-      },
-    },
-    Input: {
-      defaultProps: {
-        bg: "white",
-      },
-    },
-    TextArea: {
-      defaultProps: {
-        bg: "white",
-      },
-    },
-    Select: {
-      defaultProps: {
-        bg: "white",
-      },
     },
   },
   colors: {
+    primary: theme.colors.indigo,
     slateGray: {
       50: "#edf2f6",
       100: "#d0d7e4",
@@ -47,11 +27,8 @@ export const DashboardTheme = extendTheme({
       800: "#1d2530",
       900: "#070c18",
     },
-    process:
-    {
-      
-      300: '#4daaff',
-      
-    }
+    process: {
+      300: "#4daaff",
+    },
   },
 });
