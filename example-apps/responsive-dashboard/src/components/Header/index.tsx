@@ -16,7 +16,7 @@ import {
   useDisclose,
   useBreakpointValue,
   Box,
-} from "nb-beavr";
+} from "native-base";
 import { ScrollView } from "react-native";
 import { Feather } from "@expo/vector-icons";
 
@@ -54,7 +54,8 @@ export function Header(props: Proptype) {
                 _hover={{ bg: "transparent" }}
                 _pressed={{ bg: "transparent" }}
                 onPress={onOpen}
-                size={4}
+                size="md"
+                accessibilityLabel="Search here"
               />
             </Box>
             <Box alignSelf="center">
@@ -135,25 +136,25 @@ export function Header(props: Proptype) {
 													Add CloseButton in each and maintaint the hover color with _focus color of Input
 													*/}
                 <Alert colorScheme="coolGray" shadow={2}>
-                  <Alert.Description p={2} fontSize="md">
+                  <Alert.Description p={2} _text={{fontSize: "sm"}}>
                     Redeem coins to donate Oxygen
                   </Alert.Description>
                 </Alert>
 
                 <Alert colorScheme="coolGray" shadow={2}>
-                  <Alert.Description p={2} fontSize="md">
+                  <Alert.Description p={2} _text={{fontSize: "sm"}}>
                     CRED redeem option
                   </Alert.Description>
                 </Alert>
 
                 <Alert colorScheme="coolGray" shadow={2}>
-                  <Alert.Description p={2} fontSize="md">
+                  <Alert.Description p={2} _text={{fontSize: "sm"}}>
                     Report a bug
                   </Alert.Description>
                 </Alert>
 
                 <Alert colorScheme="coolGray" shadow={2}>
-                  <Alert.Description p={2} fontSize="md">
+                  <Alert.Description p={2} _text={{fontSize: "sm"}}>
                     Link with AmazonPay
                   </Alert.Description>
                 </Alert>

@@ -23,7 +23,7 @@ import {
   Modal,
   Input,
   Alert,
-} from "nb-beavr";
+} from "native-base";
 import { LeftPanel } from "../components";
 import { ScrollView } from "react-native";
 import * as VectorIcons from "@expo/vector-icons";
@@ -94,7 +94,7 @@ export function Dashboard({
                     _web={{ flex: { base: "none", lg: 1 } }}
                     px={0}
                   >
-                    <Text fontSize={{ base: "lg", md: "md" }}>
+                    <Text fontSize={{ base: "lg", md: "md" }} color="muted.700">
                       Good morning, Jessica Willis
                     </Text>
                     <Stack
@@ -107,11 +107,11 @@ export function Dashboard({
                           as={
                             <VectorIcons.MaterialCommunityIcons name="office-building" />
                           }
-                          color="slateGray.400"
+                          color="muted.700"
                           size="sm"
                         />
                         <Text
-                          color="slateGray.400"
+                          color="muted.700"
                           fontWeight={600}
                         >
                           Fairfax, Cleaveland, Ohio
@@ -120,11 +120,11 @@ export function Dashboard({
                       <HStack alignItems="center" space={2} ml={1}>
                         <Icon
                           as={<VectorIcons.AntDesign name="checkcircle" />}
-                          color="emerald.300"
+                          color="emerald.400"
                           size="xs"
                         />
                         <Text
-                          color="slateGray.400"
+                          color="muted.700"
                           fontWeight={600}
                         >
                           Verified Account

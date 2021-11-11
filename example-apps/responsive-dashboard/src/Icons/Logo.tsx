@@ -1,6 +1,6 @@
 import "react-native-gesture-handler";
 import React from "react";
-import { Icon, IIconProps } from "nb-beavr";
+import { Icon, IIconProps } from "native-base";
 import { Path, G } from "react-native-svg";
 export function Logo(props: IIconProps) {
   return (

@@ -1,4 +1,4 @@
-import { extendTheme } from "nb-beavr";
+import { extendTheme } from "native-base";
 
 export const DashboardTheme = extendTheme({
   components: {
