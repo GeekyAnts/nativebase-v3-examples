@@ -11,6 +11,7 @@ export function DashboardStack() {
         component={Dashboard}
         options={{
           headerShown: false,
+          title: "Dashboard"
         }}
       />
       <Stack.Screen
@@ -25,6 +26,7 @@ export function DashboardStack() {
         component={Setting}
         options={{
           headerShown: false,
+          title: "Settings"
         }}
       />
     </Stack.Navigator>

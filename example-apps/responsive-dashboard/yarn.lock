@@ -2396,6 +2396,21 @@
     "@react-types/listbox" "^3.1.1"
     "@react-types/shared" "^3.4.0"
 
+"@react-native-aria/listbox@^0.2.4-alpha.3":
+  version "0.2.4-alpha.3"
+  resolved "https://registry.yarnpkg.com/@react-native-aria/listbox/-/listbox-0.2.4-alpha.3.tgz#1a8df0de6c932c8143ea73e43713a5d37070203c"
+  integrity sha512-e/y+Wdoyy/PbpFj4DVYDYMsKI+uUqnZ/0yLByqHQvzs8Ys8o69CQkyEYzHhxvFT5lCLegkLbuQN2cJd8bYNQsA==
+  dependencies:
+    "@react-aria/interactions" "^3.3.2"
+    "@react-aria/label" "^3.1.1"
+    "@react-aria/listbox" "^3.2.4"
+    "@react-aria/selection" "^3.3.2"
+    "@react-aria/utils" "^3.6.0"
+    "@react-native-aria/interactions" "^0.2.2"
+    "@react-native-aria/utils" "^0.2.6"
+    "@react-types/listbox" "^3.1.1"
+    "@react-types/shared" "^3.4.0"
+
 "@react-native-aria/overlays@^0.2.9":
   version "0.2.11"
   resolved "https://registry.yarnpkg.com/@react-native-aria/overlays/-/overlays-0.2.11.tgz#6dbffef9fa83f72b702c56238feba25bd9351c08"
@@ -3181,10 +3196,10 @@
   resolved "https://registry.yarnpkg.com/@types/q/-/q-1.5.4.tgz#15925414e0ad2cd765bfef58842f7e26a7accb24"
   integrity sha512-1HcDas8SEj4z1Wc696tH56G8OlRaH/sqZOynNNB+HF0WOeXPaxTtbYzJY2oEfiUxjSKjhCKr+MvR7dCHcEelug==
 
-"@types/react-native@~0.63.2":
-  version "0.63.52"
-  resolved "https://registry.yarnpkg.com/@types/react-native/-/react-native-0.63.52.tgz#449beb4a413ec0f2c172cbf676a95f5b0952adf4"
-  integrity sha512-sBXvvtJaIUSXQLDh9NZitx1KHkKUdBLZy34lFKJaIXtpHIh5OEbBXeyUTFBtFwjk/RD0tneAtUqsdhheZRzAzw==
+"@types/react-native@^0.65.8":
+  version "0.65.8"
+  resolved "https://registry.yarnpkg.com/@types/react-native/-/react-native-0.65.8.tgz#0923cceb0cf59ae674d915296554e726ea3a768a"
+  integrity sha512-dVZwSBBxkX+PlEQrFhAqnoA5Cln6ZF5H8GVi/NeA767KKH06bNPeezlZI8/J4Wa6quyB5qssVq4r5PvFJ9iKcw==
   dependencies:
     "@types/react" "*"
 
