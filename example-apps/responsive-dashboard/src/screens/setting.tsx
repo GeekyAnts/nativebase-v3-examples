@@ -1,24 +1,22 @@
 import React, { useState } from "react";
 import {
   Box,
-  Divider,
   Text,
   VStack,
   FormControl,
   Input,
   TextArea,
   HStack,
-  Avatar,
   Button,
   Select,
   Checkbox,
-  useBreakpointValue,
   Stack,
+  Image,
+  AddIcon,
+  Hidden,
 } from "native-base";
-import { ScrollView } from "react-native";
-import { LeftPanel } from "../components";
 import type { StackNavigationProp } from "@react-navigation/stack";
-import { Header } from "../components/Header";
+import { Layout } from "../components/Layout";
 
 export function Setting({
   navigation,
@@ -27,292 +25,250 @@ export function Setting({
 }) {
   let [language, setLanguage] = useState("English");
   let [currency, setCurrency] = useState("USD ($)");
-  const isLargeScreen = useBreakpointValue({
-    base: false,
-    sm: false,
-    md: false,
-    lg: true,
-  });
 
   return (
-    <ScrollView contentContainerStyle={{ flex: 1 }}>
+    <Layout navigation={navigation}>
       <Stack
-        /* @ts-ignore */
-        direction={{ base: "column", md: "column", sm: "column", lg: "row" }}
-        h="100%"
-        flex={1}
+        my="6"
+        space={{ base: "5", md: "16" }}
+        direction={{ base: "column-reverse", md: "row" }}
       >
-        <LeftPanel navigation={navigation} />
-        <ScrollView>
-          <Box flex={1}>
-            <Box px={6} bg="white">
-              <Header title="Settings" />
-              <Divider bg="gray.100" size={2.5} rounded={5} />
+        <VStack space="6" flex="1">
+          <VStack space="3">
+            <Box>
+              <Text bold fontSize="lg" textTransform="uppercase">
+                Personal Info
+              </Text>
+            </Box>
+            <VStack space="3">
+              <FormControl>
+                <FormControl.Label>
+                  <Text fontWeight="semibold" fontSize="xs">
+                    Name
+                  </Text>
+                </FormControl.Label>
+                <Input defaultValue="Jessica Willis" />
+              </FormControl>
+              <FormControl>
+                <FormControl.Label>
+                  <Text fontWeight="semibold" fontSize="xs">
+                    Email
+                  </Text>
+                </FormControl.Label>
+                <Input defaultValue="jessicawillis@gmail.com" />
+              </FormControl>
+              <FormControl>
+                <FormControl.Label>
+                  <Text fontWeight="semibold" fontSize="xs">
+                    Bio
+                  </Text>
+                </FormControl.Label>
+                <TextArea h={24} />
+                <FormControl.HelperText>
+                  Brief description for your profile. URLs are hyperlinked.
+                </FormControl.HelperText>
+              </FormControl>
+            </VStack>
+          </VStack>
+          <VStack space="3">
+            <Box>
+              <Text bold fontSize="lg" textTransform="uppercase">
+                Language
+              </Text>
+            </Box>
+            <VStack space="3">
+              <FormControl>
+                <FormControl.Label>
+                  <Text fontWeight="semibold" fontSize="xs">
+                    Display Language
+                  </Text>
+                </FormControl.Label>
+                <Select
+                  selectedValue={language}
+                  minWidth={200}
+                  onValueChange={(itemValue: string) => setLanguage(itemValue)}
+                >
+                  <Select.Item label="English" value="English" />
+                  <Select.Item label="Hebrew" value="Hebrew" />
+                  <Select.Item label="Arabic" value="Arabic" />
+                </Select>
+              </FormControl>
+              <FormControl>
+                <FormControl.Label>
+                  <Text fontWeight="semibold" fontSize="xs">
+                    Display Currency
+                  </Text>
+                </FormControl.Label>
+                <Select
+                  selectedValue={currency}
+                  minWidth={200}
+                  onValueChange={(itemValue: string) => setCurrency(itemValue)}
+                >
+                  <Select.Item label="USD ($)" value="USD ($)" />
+                  <Select.Item label="AED (dh)" value="AED (dh)" />
+                  <Select.Item label="EUR (€)" value="EUR (€)" />
+                </Select>
+              </FormControl>
+            </VStack>
+          </VStack>
+          <VStack space="3">
+            <Box>
+              <Text bold fontSize="lg" textTransform="uppercase">
+                Notifications
+              </Text>
+            </Box>
+            <VStack space="4" my="1">
+              <FormControl>
+                <Checkbox
+                  value="meetup"
+                  colorScheme="blue"
+                  _text={{ fontSize: "xs" }}
+                >
+                  Get updates about the latest meetups.
+                </Checkbox>
+              </FormControl>
+              <FormControl>
+                <Checkbox
+                  defaultIsChecked
+                  value="activity"
+                  colorScheme="blue"
+                  _text={{ fontSize: "xs" }}
+                >
+                  Get notifications about your account activities
+                </Checkbox>
+              </FormControl>
+            </VStack>
+          </VStack>
+          <VStack space="4">
+            <Box>
+              <Text bold fontSize="lg" textTransform="uppercase">
+                Payment Method
+              </Text>
+            </Box>
+            <VStack
+              space={3}
+              flex={{ base: "none", lg: 2 }}
+              justifyContent="center"
+            >
               <VStack
-                space={12}
-                divider={<Divider />}
-                my={{ base: 7, lg: 12 }}
-                mx={{ base: 0, lg: 'auto' }}
-
+                rounded="xl"
+                w={{ base: "80", md: "96" }}
+                p={{ base: "4", md: "6" }}
+                bg={{
+                  linearGradient: {
+                    colors: ["lightBlue.300", "violet.800"],
+                    start: [0, 0],
+                    end: [1, 0],
+                  },
+                }}
+                space="5"
               >
-                <Stack
-                  direction={isLargeScreen ? "row" : "column"}
-                  space={5}
-                >
+                <Image
+                  source={require("./../../assets/chip.png")}
+                  w="16"
+                  h="12"
+                  rounded="lg"
+                />
+                <HStack space={{ base: "4", md: "6" }}>
                   <Text
-                    mb={5}
-                    bold
-                    fontSize="lg"
-                    flex={{ base: "none", lg: 1 }}
+                    fontSize={{ base: "lg", md: "2xl" }}
+                    fontFamily="mono"
+                    fontWeight="semibold"
+                    color="primary.50"
                   >
-                    Personal Info
+                    4122
                   </Text>
-                  <VStack space={5} flex={{ base: "none", lg: 2 }}>
-                    <FormControl>
-                      <FormControl.Label>
-                        <Text
-                          bold
-                        >
-                          Name
-                        </Text>
-                      </FormControl.Label>
-                      <Input />
-                    </FormControl>
-                    <FormControl>
-                      <FormControl.Label>
-                        <Text
-                          bold
-                        >
-                          Email
-                        </Text>
-                      </FormControl.Label>
-                      <Input placeholder="john@geekyants.com" />
-                    </FormControl>
-                    <FormControl>
-                      <FormControl.Label>
-                        <Text
-                          bold
-                        >
-                          Bio
-                        </Text>
-                      </FormControl.Label>
-                      <TextArea h={24} _web={{ resize: "vertical" }} />
-                      <FormControl.HelperText>
-                        Brief description for your profile. URLs are
-                        hyperlinked.
-                      </FormControl.HelperText>
-                    </FormControl>
+                  <Text
+                    fontSize={{ base: "lg", md: "2xl" }}
+                    fontFamily="mono"
+                    fontWeight="semibold"
+                    color="primary.50"
+                  >
+                    4567
+                  </Text>
+                  <Text
+                    fontSize={{ base: "lg", md: "2xl" }}
+                    fontFamily="mono"
+                    fontWeight="semibold"
+                    color="primary.50"
+                  >
+                    8910
+                  </Text>
+                  <Text
+                    fontSize={{ base: "lg", md: "2xl" }}
+                    fontFamily="mono"
+                    fontWeight="semibold"
+                    color="primary.50"
+                  >
+                    1234
+                  </Text>
+                </HStack>
+                <HStack justifyContent="space-between">
+                  <VStack>
+                    <Text fontSize="xs" color="primary.50">
+                      Card Holder Name
+                    </Text>
+                    <Text color="primary.50" fontWeight="semibold">
+                      Jessica Willis
+                    </Text>
                   </VStack>
-                </Stack>
-                <Stack
-                  direction={isLargeScreen ? "row" : "column"}
-                  space={5}
-                >
-                  <Text
-                    bold
-                    fontSize="lg"
-                    flex={{ base: "none", lg: 1 }}
-                  >
-                    Profile Photo
-                  </Text>
-
-                  <HStack
-                    space={4}
-                    alignItems="center"
-                    flex={{ base: "none", lg: 2 }}
-                  >
-                    <Avatar
-                      size={isLargeScreen ? "xl" : "lg"}
-                      source={{
-                        uri: "https://avatars.githubusercontent.com/u/23293248",
-                      }}
-                    >
-                      NB
-                    </Avatar>
-                    <VStack flex={1}>
-                      <HStack space={4}>
-                        <Button
-                          colorScheme="blueGray"
-                          //@ts-ignore
-                          variant="subtle"
-                          size={isLargeScreen ? "sm" : "xs"}
-                        >
-                          Change Photo
-                        </Button>
-                        <Button
-                          variant="ghost"
-                          size={isLargeScreen ? "sm" : "xs"}
-                          colorScheme="danger"
-                        >
-                          Delete
-                        </Button>
-                      </HStack>
-
-                      <Text
-                        fontSize="sm"
-                        color="blueGray.500"
-                        mt={2}
-                      >
-                        .jpg, .gif, or .png. Max file size 700K.
-                      </Text>
-                    </VStack>
-                  </HStack>
-                </Stack>
-
-                <Stack
-                  direction={isLargeScreen ? "row" : "column"}
-                  space={5}
-                >
-                  <Text
-                    bold
-                    fontSize="lg"
-                    flex={{ base: "none", lg: 1 }}
-                  >
-                    Language
-                  </Text>
-                  <VStack space={5} flex={{ base: "none", lg: 2 }}>
-                    <FormControl>
-                      <FormControl.Label>
-                        <Text
-                          bold
-                        >
-                          Display Language
-                        </Text>
-                      </FormControl.Label>
-                      <Select
-                        selectedValue={language}
-                        minWidth={200}
-                        onValueChange={(itemValue: string) =>
-                          setLanguage(itemValue)
-                        }
-                      >
-                        <Select.Item label="English" value="English" />
-                        <Select.Item label="Hebrew" value="Hebrew" />
-                        <Select.Item label="Arabic" value="Arabic" />
-                      </Select>
-                    </FormControl>
-                    <FormControl>
-                      <FormControl.Label>
-                        <Text bold>Display Currency</Text>
-                      </FormControl.Label>
-                      <Select
-                        selectedValue={currency}
-                        minWidth={200}
-                        onValueChange={(itemValue: string) =>
-                          setCurrency(itemValue)
-                        }
-                      >
-                        <Select.Item label="USD ($)" value="USD ($)" />
-                        <Select.Item label="AED (dh)" value="AED (dh)" />
-                        <Select.Item label="EUR (€)" value="EUR (€)" />
-                      </Select>
-                    </FormControl>
+                  <VStack>
+                    <Text fontSize="xs" color="primary.50">
+                      Expiry Date
+                    </Text>
+                    <Text color="primary.50" fontWeight="semibold">
+                      07/23
+                    </Text>
                   </VStack>
-                </Stack>
-
-                <Stack
-                  direction={isLargeScreen ? "row" : "column"}
-                  space={5}
-                >
-                  <Text
-                    bold
-                    fontSize="lg"
-                    flex={{ base: "none", lg: 1 }}
-                  >
-                    Notification
-                  </Text>
-                  <VStack space={5} flex={{ base: "none", lg: 2 }}>
-                    <Checkbox value="" colorScheme="blue">
-                      <Text
-                        ml={2}
-                      >
-                        Get updates about the latest meetups.
-                      </Text>
-                    </Checkbox>
-                    <Checkbox defaultIsChecked value="" colorScheme="blue">
-                      <Text
-                        ml={2}
-                      >
-                        Get notifications about your account activities
-                      </Text>
-                    </Checkbox>
-                  </VStack>
-                </Stack>
-                <Stack
-                  direction={isLargeScreen ? "row" : "column"}
-                  space={5}
-                >
-                  <Text
-                    bold
-                    fontSize="lg"
-                    flex={{ base: "none", lg: 1 }}
-                  >
-                    Payment Method
-                  </Text>
-
-                  <VStack
-                    space={3}
-                    flex={{ base: "none", lg: 2 }}
-                    justifyContent="center"
-                  >
-                    <HStack shadow={4} rounded={12} p={6} space={1} bg="white">
-                      <VStack space={1}>
-                        <Text
-                          bold
-                        >
-                          Visa ending in 5555
-                        </Text>
-                        <Text color="coolGray.400" fontSize="sm">
-                          expired in 1/2024
-                        </Text>
-                      </VStack>
-                      <VStack ml="auto">
-                        <Button
-                          variant="outline"
-                          colorScheme="coolGray"
-                          py={3}
-                          size={isLargeScreen ? "md" : "xs"}
-                          _text={{ color: "black" }}
-                        >
-                          Update
-                        </Button>
-                      </VStack>
-                    </HStack>
-                    <Button
-                      variant="link"
-                      fontSize="sm"
-                      alignSelf="flex-start"
-                      p={0}
-                      colorScheme="blue"
-                      _text={{ fontSize: "sm" }}
-                    >
-                      Add a new card
-                    </Button>
-                  </VStack>
-                </Stack>
-                <HStack space={3} alignItems="flex-end" ml="auto" mb={12}>
-                  <Button
-                    size={isLargeScreen ? "sm" : "sm"}
-                    variant="solid"
-                    colorScheme="blue"
-                  >
-                    Save Changes
-                  </Button>
-                  <Button
-                    size={isLargeScreen ? "sm" : "sm"}
-                    variant="outline"
-                    colorScheme="blueGray"
-                    _pressed={{ bg: "blueGray.100" }}
-                    _text={{ color: "black" }}
-                  >
-                    Cancel
-                  </Button>
                 </HStack>
               </VStack>
-            </Box>
-          </Box>
-        </ScrollView>
+              <Button
+                variant="link"
+                alignSelf="flex-start"
+                p={0}
+                colorScheme="blue"
+                _text={{ fontSize: "sm", textDecorationLine: "none" }}
+                leftIcon={<AddIcon size="3" />}
+              >
+                Add a new card
+              </Button>
+            </VStack>
+          </VStack>
+        </VStack>
+
+        <VStack space="2">
+          <Hidden till="md">
+            <Text fontWeight="semibold" fontSize="xs">
+              Profile Photo
+            </Text>
+          </Hidden>
+          <VStack
+            space={4}
+            justifyContent={{ base: "center", md: "flex-start" }}
+            mx={{ base: "auto", md: "0" }}
+          >
+            <Image
+              size={{ base: "32", md: "48" }}
+              rounded="sm"
+              source={{
+                uri:
+                  "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80",
+              }}
+            />
+
+            <VStack space="2" w={{ base: "32", md: "48" }} flex="1">
+              <Button w={{ base: "32", md: "48" }}>Upload an Image</Button>
+              <Button variant="ghost" w={{ base: "32", md: "48" }}>
+                Remove photo
+              </Button>
+            </VStack>
+          </VStack>
+        </VStack>
       </Stack>
-    </ScrollView>
+      <HStack space={3} alignItems="flex-end" ml="auto" mt="6" mb="20">
+        <Button variant="outline">Cancel</Button>
+        <Button variant="solid">Save Changes</Button>
+      </HStack>
+    </Layout>
   );
 }

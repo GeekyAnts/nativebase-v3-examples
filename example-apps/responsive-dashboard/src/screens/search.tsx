@@ -1,92 +1,103 @@
 import React from "react";
 import {
   Box,
-  Button,
   HStack,
-  IconButton,
   Icon,
   Input,
-  SearchIcon,
+  FlatList,
   Text,
+  Pressable,
   VStack,
-  Alert,
+  IconButton,
 } from "native-base";
+import { MaterialCommunityIcons, MaterialIcons } from "@expo/vector-icons";
 import type { StackNavigationProp } from "@react-navigation/stack";
-import { Ionicons } from "@expo/vector-icons";
+import { MobileHeader } from "../components/Header/MobileHeader";
 
+export const data = [
+  {
+    title: "Redeem coins to donate oxygen",
+  },
+  {
+    title: "CRED Redeem Option",
+  },
+  {
+    title: "Report a bug",
+  },
+  {
+    title: "Link with Amazon Pay",
+  },
+  {
+    title: "CRED Redeem Option",
+  },
+  {
+    title: "Report a bug",
+  },
+];
 export function Search({
   navigation,
 }: {
   navigation: StackNavigationProp<any>;
 }) {
   return (
-    <Box>
-      <HStack
-        alignItems="center"
-        bg="coolGray.600"
-        py={2}
-        overflow="hidden"
-        w="100%"
-      >
+    <Box bg="white" flex={1} px="4">
+      <MobileHeader />
+      <VStack space="1">
         <Input
-          flex={1}
-          ml={2}
-          borderColor="blueGray.400"
+          size="lg"
+          //@ts-ignore
+          flexGrow="0"
+          placeholder="Search"
+          pl="4"
           InputLeftElement={
-            <SearchIcon size="sm" color="blueGray.300" ml={2} />
-          }
-          _focus={{ style: { boxShadow: "none" }, borderColor: "blueGray.200" }}
-          color="blueGray.500"
-        ></Input>
-        <IconButton
-          icon={
-            <Icon
-              as={<Ionicons name="close" />}
-              color="blueGray.200"
-              size="sm"
+            <IconButton
+              pl="3"
+              icon={
+                <Icon
+                  as={MaterialCommunityIcons}
+                  name="keyboard-backspace"
+                  color="trueGray.400"
+                  size="sm"
+                />
+              }
+              onPress={() => {
+                navigation.navigate("dashboard");
+              }}
             />
           }
-          onPress={() => navigation.navigate("dashboard")}
-          _pressed={{ bg: "transparent" }}
-        ></IconButton>
-      </HStack>
-      <Box p={2}>
-        <Text fontSize="md" bold>
-          Recent searches
-        </Text>
-        <VStack space={2} py={2}>
-          <Text fontSize="md">CRED redeem option</Text>
-          <Text fontSize="md">Flipkart redeem</Text>
-          <Text fontSize="md">Report a bug</Text>
-          <Text fontSize="md">Delete account</Text>
-        </VStack>
-        {/* <VStack space={1}>
-					<Box mb={2}>Recent searches </Box>
-					<Alert colorScheme="coolGray" shadow={2}>
-						<Alert.Description p={2} fontSize="md">
-							Redeem coins to donate Oxygen
-						</Alert.Description>
-					</Alert>
-
-					<Alert colorScheme="coolGray" shadow={2}>
-						<Alert.Description p={2} fontSize="md">
-							CRED redeem option
-						</Alert.Description>
-					</Alert>
-
-					<Alert colorScheme="coolGray" shadow={2}>
-						<Alert.Description p={2} fontSize="md">
-							Report a bug
-						</Alert.Description>
-					</Alert>
-
-					<Alert colorScheme="coolGray" shadow={2}>
-						<Alert.Description p={2} fontSize="md">
-							Link with AmazonPay
-						</Alert.Description>
-					</Alert>
-				</VStack> */}
-      </Box>
+        />
+        <FlatList
+          data={data}
+          renderItem={({ item }) => (
+            <Pressable
+              borderRadius="xs"
+              py="4"
+              px="3"
+              _hover={{ bg: "indigo.50" }}
+              _focus={{
+                bg: "indigo.50",
+                borderColor: "transparent",
+              }}
+              //@ts-ignore
+              _web={{ style: { outline: "none" } }}
+            >
+              {({ isHovered, isFocused }: any) => (
+                <HStack space={3}>
+                  <Icon
+                    as={MaterialIcons}
+                    name="access-time"
+                    size="sm"
+                    color={
+                      isHovered || isFocused ? "indigo.500" : "trueGray.400"
+                    }
+                  />
+                  <Text>{item.title}</Text>
+                </HStack>
+              )}
+            </Pressable>
+          )}
+        />
+      </VStack>
     </Box>
   );
 }
