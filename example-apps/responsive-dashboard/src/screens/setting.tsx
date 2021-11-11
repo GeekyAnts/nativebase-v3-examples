@@ -47,7 +47,7 @@ export function Setting({
                     Name
                   </Text>
                 </FormControl.Label>
-                <Input />
+                <Input defaultValue="Jessica Willis" />
               </FormControl>
               <FormControl>
                 <FormControl.Label>
@@ -55,7 +55,7 @@ export function Setting({
                     Email
                   </Text>
                 </FormControl.Label>
-                <Input />
+                <Input defaultValue="jessicawillis@gmail.com" />
               </FormControl>
               <FormControl>
                 <FormControl.Label>

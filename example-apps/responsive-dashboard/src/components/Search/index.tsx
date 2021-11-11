@@ -10,7 +10,7 @@ import {
   Icon,
 } from "native-base";
 import { ScrollView } from "react-native-gesture-handler";
-import { data } from "../../components/Header/components/NotificationButton";
+import { data } from "../../screens/search";
 import { MaterialIcons } from "@expo/vector-icons";
 
 export function SearchModal(props: any) {
