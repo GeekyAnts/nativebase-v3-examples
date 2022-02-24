@@ -88,12 +88,12 @@ function HomeScreen() {
             >
               {d.toLocaleDateString("en-us", options)}
             </Text>
-            <Heading size={["md", "lg", "md"]} fontWeight="medium">
+            <Heading size="md" fontWeight="medium">
               The Garden City
             </Heading>
             <Text
               isTruncated
-              noOfLines={useBreakpointValue("4", "4", "4")}
+              noOfLines={4}
               _light={{ color: "coolGray.600" }}
               _dark={{ color: "warmGray.200" }}
             >
