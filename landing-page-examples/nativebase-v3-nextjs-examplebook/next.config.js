@@ -1,18 +1,35 @@
-const { withExpo } = require("@expo/next-adapter");
-const withFonts = require("next-fonts");
-const withPlugins = require("next-compose-plugins");
-const withTM = require("next-transpile-modules")([
-  "react-native-web",
-  "native-base",
-]);
+const { withNativebase } = require("@native-base/next-adapter");
+const path = require("path");
 
-const nextConfig = {};
-
-module.exports = withPlugins(
-  [
-    withTM,
-    [withFonts, { projectRoot: __dirname }],
-    [withExpo, { projectRoot: __dirname }],
+module.exports = withNativebase({
+  dependencies: [
+    "react-native-vector-icons",
+    "react-native-vector-icons-for-web",
+    "@expo/next-adapter",
   ],
-  nextConfig
-);
+  nextConfig: {
+    // projectRoot: __dirname,
+    webpack: (config, options) => {
+      config.module.rules.push({
+        test: /\.ttf$/,
+        loader: "url-loader", // or directly file-loader
+        include: path.resolve(
+          __dirname,
+          "node_modules/react-native-vector-icons"
+        ),
+      });
+      config.resolve.alias = {
+        ...(config.resolve.alias || {}),
+        "react-native$": "react-native-web",
+        "@expo/vector-icons": "react-native-vector-icons",
+      };
+      config.resolve.extensions = [
+        ".web.js",
+        ".web.ts",
+        ".web.tsx",
+        ...config.resolve.extensions,
+      ];
+      return config;
+    },
+  },
+});
