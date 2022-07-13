@@ -29,24 +29,24 @@ function MoreIcon(props: any) {
   return (
     <Icon
       size={5}
-      data-name="Icon ionic-ios-arrow-dropright"
-      xmlns="http://www.w3.org/2000/svg"
-      width="25.8"
-      height="25.8"
-      viewBox="0 0 25.8 25.8"
+      data-name='Icon ionic-ios-arrow-dropright'
+      xmlns='http://www.w3.org/2000/svg'
+      width='25.8'
+      height='25.8'
+      viewBox='0 0 25.8 25.8'
     >
       <path
-        id="Path_432"
-        data-name="Path 432"
-        d="M14.768,10.331a1.2,1.2,0,0,1,1.693,0l5.917,5.935a1.2,1.2,0,0,1,.037,1.65l-5.83,5.848a1.2,1.2,0,1,1-1.693-1.687l4.955-5.03-5.079-5.03A1.183,1.183,0,0,1,14.768,10.331Z"
-        transform="translate(-4.677 -4.154)"
+        id='Path_432'
+        data-name='Path 432'
+        d='M14.768,10.331a1.2,1.2,0,0,1,1.693,0l5.917,5.935a1.2,1.2,0,0,1,.037,1.65l-5.83,5.848a1.2,1.2,0,1,1-1.693-1.687l4.955-5.03-5.079-5.03A1.183,1.183,0,0,1,14.768,10.331Z'
+        transform='translate(-4.677 -4.154)'
         fill={props.color}
       />
       <path
-        id="Path_433"
-        data-name="Path 433"
-        d="M3.375,16.275a12.9,12.9,0,1,0,12.9-12.9A12.9,12.9,0,0,0,3.375,16.275Zm1.985,0A10.911,10.911,0,0,1,23.99,8.56,10.911,10.911,0,1,1,8.56,23.99,10.822,10.822,0,0,1,5.36,16.275Z"
-        transform="translate(-3.375 -3.375)"
+        id='Path_433'
+        data-name='Path 433'
+        d='M3.375,16.275a12.9,12.9,0,1,0,12.9-12.9A12.9,12.9,0,0,0,3.375,16.275Zm1.985,0A10.911,10.911,0,0,1,23.99,8.56,10.911,10.911,0,1,1,8.56,23.99,10.822,10.822,0,0,1,5.36,16.275Z'
+        transform='translate(-3.375 -3.375)'
         fill={props.color}
       />
     </Icon>
@@ -72,19 +72,19 @@ function HomeScreen() {
     <Center flex={1} bg={"transparent"}>
       <Box
         shadow={2}
-        overflow="hidden"
-        rounded="lg"
+        overflow='hidden'
+        rounded='lg'
         w={{ base: 56, sm: 80, md: "md" }}
         bg={useColorModeValue("white", "blueGray.600")}
       >
-        <AspectRatio w="100%" ratio={ratio}>
-          <Image source={HeroImg} alt="image base" />
+        <AspectRatio w='100%' ratio={ratio}>
+          <Image source={HeroImg} alt='image base' />
         </AspectRatio>
-        <Text bold position="absolute" color="white" top={0} m={[4, 4, 8]}>
+        <Text bold position='absolute' color='white' top={0} m={[4, 4, 8]}>
           NEWS
         </Text>
         <Stack space={[4, 4, 4]} p={[4, 4, 8]}>
-          <Text color="gray.400">{d.toLocaleDateString("en-us", options)}</Text>
+          <Text color='gray.400'>{d.toLocaleDateString("en-us", options)}</Text>
           <Heading size={["md", "lg", "md"]}>
             The stunning Dawki River in Meghalaya is so clear that boats appear
             to be floating in the air
