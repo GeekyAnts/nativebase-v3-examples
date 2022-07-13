@@ -15,7 +15,7 @@ import {
   useBreakpointValue,
 } from "native-base";
 import { theme } from "./theme";
-const HeroImg = require("./assets/dawki-river.png");
+const HeroImg = require("./assets/dawki-river-min.png");
 
 function useForceUpdate() {
   const [, setTick] = useState(0);
@@ -25,7 +25,7 @@ function useForceUpdate() {
   return update;
 }
 
-function MoreIcon(props:any) {
+function MoreIcon(props: any) {
   return (
     <Icon
       size={5}
@@ -56,7 +56,7 @@ function MoreIcon(props:any) {
 function HomeScreen() {
   const forceUpdate = useForceUpdate();
   const ratio = useBreakpointValue({ base: 16 / 9, md: 16 / 7 });
-  
+
   const { colorMode, toggleColorMode } = useColorMode();
 
   useEffect(() => {
@@ -66,32 +66,40 @@ function HomeScreen() {
       toggleColorMode();
     }
   }, []);
-  const options:any = { month: 'long',year: 'numeric',  day: 'numeric' };
+  const options: any = { month: "long", year: "numeric", day: "numeric" };
   const d = new Date();
   return (
     <Center flex={1} bg={"transparent"}>
-      <Box shadow={2} overflow="hidden" rounded="lg" w={{ base: 56, sm: 80, md: "md" }} bg={useColorModeValue("white", "blueGray.600")}>
+      <Box
+        shadow={2}
+        overflow="hidden"
+        rounded="lg"
+        w={{ base: 56, sm: 80, md: "md" }}
+        bg={useColorModeValue("white", "blueGray.600")}
+      >
         <AspectRatio w="100%" ratio={ratio}>
-          <Image
-            source={HeroImg}
-            alt="image base"
-          />
+          <Image source={HeroImg} alt="image base" />
         </AspectRatio>
         <Text bold position="absolute" color="white" top={0} m={[4, 4, 8]}>
           NEWS
         </Text>
         <Stack space={[4, 4, 4]} p={[4, 4, 8]}>
-          <Text color="gray.400">{d.toLocaleDateString('en-us',options)}</Text>
+          <Text color="gray.400">{d.toLocaleDateString("en-us", options)}</Text>
           <Heading size={["md", "lg", "md"]}>
-          The stunning Dawki River in Meghalaya is so clear that boats appear to be floating in the air
+            The stunning Dawki River in Meghalaya is so clear that boats appear
+            to be floating in the air
           </Heading>
           <Text lineHeight={[20, 20, 24]} noOfLines={[4, 4, 2]}>
-          With lush green meadows, rivers clear as crystal, pine-covered hills, gorgeous waterfalls, mesmerizing lakes and majestic forests,Meghalaya is truly a nature lover’s paradise… 
+            With lush green meadows, rivers clear as crystal, pine-covered
+            hills, gorgeous waterfalls, mesmerizing lakes and majestic
+            forests,Meghalaya is truly a nature lover’s paradise…
           </Text>
         </Stack>
         <HStack space={3} px={[4, 4, 8]} pb={[4, 4, 8]}>
-          <MoreIcon color={useColorModeValue("green.600", "green.400")}/>
-          <Text color={useColorModeValue("green.800", "green.400")}>Find out more</Text>
+          <MoreIcon color={useColorModeValue("green.600", "green.400")} />
+          <Text color={useColorModeValue("green.800", "green.400")}>
+            Find out more
+          </Text>
         </HStack>
       </Box>
     </Center>
